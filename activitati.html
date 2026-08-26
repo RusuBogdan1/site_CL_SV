@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activități & Evenimente - Centrul Local „Ținutul Fagilor” Suceava</title>
+  <meta name="description" content="Descoperă activitățile de centru (Campuri de iarnă, Campuri de vară, DAC, 1 Decembrie, Cina cercetășească, Târgul de Crăciun) și marile evenimente (Cupa Izvoarelor, Via Transilvanica, JOTA-JOTI, Logiscool).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" title="Centrul Local Ținutul Fagilor Suceava">
+        <img src="assets/images/logo.svg" alt="Siglă Cercetașii României Suceava" width="54" height="54">
+        <div class="brand-text">
+          <span class="brand-title">Ținutul Fagilor Suceava</span>
+          <span class="brand-subtitle">Cercetașii României</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html" class="nav-link">Acasă</a></li>
+          
+          <li class="nav-dropdown-wrapper">
+            <a href="despre-noi.html" class="nav-link">
+              Despre Noi <span class="dropdown-caret">▾</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="despre-noi.html">Cine suntem?</a></li>
+              <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
+              <li><a href="echipa.html">Echipa Noastră</a></li>
+            </ul>
+          </li>
+
+          <li><a href="ce-este-cercetasia.html" class="nav-link">Ce este Cercetășia?</a></li>
+          <li><a href="ramuri-de-varsta.html" class="nav-link">Ramuri de Vârstă</a></li>
+          <li><a href="activitati.html" class="nav-link active">Activități</a></li>
+          <li><a href="proiecte.html" class="nav-link">Proiecte</a></li>
+          <li><a href="safe-from-harm.html" class="nav-link">Safe from Harm</a></li>
+          <li><a href="parteneri.html" class="nav-link">Parteneri</a></li>
+          <li><a href="donatii.html" class="nav-link">Donații</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="contact.html" class="nav-cta-btn">
+          <span>Înscrieri</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul de navigare" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Acasă</a>
+        <span>/</span>
+        <span>Activități</span>
+      </div>
+      <h1 class="page-header-title">Activități & Evenimente Scout</h1>
+      <p class="page-header-subtitle">
+        Tradiții de centru, tabere la munte și colaborări de anvergură care dau viață valorilor scout în Suceava.
+      </p>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <section style="background: var(--white); border-bottom: 1px solid var(--slate-200); padding: 1.25rem 0;">
+    <div class="container">
+      <div class="activity-filter-bar" style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+        <button class="filter-btn active" data-filter="all">Toate Activitățile</button>
+        <button class="filter-btn" data-filter="centru">Activități de Centru</button>
+        <button class="filter-btn" data-filter="evenimente">Evenimente Scout</button>
+        <button class="filter-btn" data-filter="colaborari">Colaborări & Parteneriate</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="section">
+    <div class="container">
+      
+      <div class="activities-grid">
+        
+        <!-- 1. Campuri de Iarnă -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Iarnă</span>
+            <div class="activity-icon-round">❄️</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Campuri de Iarnă</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Tradiție definitorie a centrului sucevean (precum celebrul camp <em>„Hriscoavele din Putna”</em>). Zăpadă, ateliere tematice, tehnici de supraviețuire în condiții reci, cabană primitoare și seri călduroase la lumina lumânărilor.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Putna, cabane montane din Bucovina, jocuri mari pe zăpadă, igluuri.
+          </div>
+        </div>
+
+        <!-- 2. Campuri de Vară -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Vară</span>
+            <div class="activity-icon-round">⛺</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Campuri de Vară (La Corturi)</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Punctul culminant al anului cercetășesc! Timp de o săptămână, cercetașii trăiesc în corturi în mijlocul naturii: construcții de pionierat din lemn și sfori, gătit la ceaun în patrulă, drumeții lungi și foc de tabără de neuitat.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Zamoștea, Voroneț, Drăguș, Masivul Rarău-Giumalău, Tecuci.
+          </div>
+        </div>
+
+        <!-- 3. DAC (Deschiderea Anului Cercetășesc) -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Toamnă</span>
+            <div class="activity-icon-round">🍂</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">DAC - Deschiderea Anului</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Debutul activităților cercetășești în luna octombrie. Găzduit adesea la Iulius Mall Suceava sau în parcurile municipiului, evenimentul aduce jocurile, atelierele scout și entuziasmul direct în fața comunității și noilor recruți.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Trecerea la noua ramură de vârstă, ateliere deschise, jocuri interactive.
+          </div>
+        </div>
+
+        <!-- 4. 1 Decembrie - Ziua Națională -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Național</span>
+            <div class="activity-icon-round">🇷🇴</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">1 Decembrie (Ziua Națională)</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Cercetașii suceveni participă în uniformă la manifestările oficiale dedicate Zilei Naționale a României, cinstind memoria înaintașilor și implicându-se în activități patriotice și civice locale.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Marș festiv, stegulețe, ceai cald oferit comunității, omagiu istoric.
+          </div>
+        </div>
+
+        <!-- 5. Cina Cercetășească -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Tradiție</span>
+            <div class="activity-icon-round">🍽️</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Cina Cercetășească</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Un eveniment festiv de suflet care reunește întreaga familie a Centrului Local: cercetași, lideri, voluntari, părinți, parteneri și alumni. O seară de bilanț, premiere, colinde și depănare de amintiri.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Comunitate reunită, cântece la chitară, recunoașterea meritelor.
+          </div>
+        </div>
+
+        <!-- 6. Târgul de Crăciun -->
+        <div class="activity-card" data-category="centru">
+          <div class="activity-card-header">
+            <span class="activity-badge centru">Activitate de Centru • Decembrie</span>
+            <div class="activity-icon-round">🎄</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Târgul de Crăciun</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Ateliere meșteșugărești unde cercetașii creează ornamente ecologice, gulgute și felicitări de iarnă. Fondurile strânse sunt direcționate către acțiunile caritabile ale centrului.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Decorațiuni din lemn și conuri, ateliere pentru copii, fapte bune.
+          </div>
+        </div>
+
+        <!-- 7. Cupa Izvoarelor -->
+        <div class="activity-card" data-category="evenimente">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment">Eveniment • Competiție Scout</span>
+            <div class="activity-icon-round">🏆</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Cupa Izvoarelor</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Tradiționala activitate scout de orientare în natură, probe tehnice de patrulă, azimut, noduri și spirit de echipă. Patrulele din Suceava s-au distins repetat pe podiumul acestei competiții.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Orientare sportivă, probe contra cronometru, trofeu de patrulă.
+          </div>
+        </div>
+
+        <!-- 8. Festivalul Trufelor -->
+        <div class="activity-card" data-category="evenimente">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment">Eveniment • Local & Cultural</span>
+            <div class="activity-icon-round">🍄</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Festivalul Trufelor</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Participare activă și suport logistic în cadrul evenimentelor culinare și culturale bucovinene, promovând valorile locale, voluntariatul și conexiunea cu bogățiile pădurilor noastre.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Implicare civică, voluntariat în comunitate, promovare Bucovina.
+          </div>
+        </div>
+
+        <!-- 9. Via Transilvanica -->
+        <div class="activity-card" data-category="colaborari">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment" style="background: #ecfdf5; color: #047857;">Colaborare • Drumeții</span>
+            <div class="activity-icon-round">🌲</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Via Transilvanica</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Drumeții de anduranță pe tronsonul Bucovina al celebrului traseu <em>„Drumul care unește”</em>. Tinerii cercetași descoperă patrimoniul cultural, bornele sculptate și învață respectul pentru natură.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Tășuleasa Social, marcaje turistice, anduranță, ecologie.
+          </div>
+        </div>
+
+        <!-- 10. JOTA-JOTI -->
+        <div class="activity-card" data-category="evenimente">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment" style="background: var(--purple-100); color: var(--purple-800);">Eveniment Mondial WOSM</span>
+            <div class="activity-icon-round">📻</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">JOTA-JOTI (Jamboree Mondial)</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            <em>Jamboree on the Air & Jamboree on the Internet</em> — cel mai mare eveniment digital scout din lume. Cercetașii din Suceava comunică prin unde radio și internet cu peste 95.000 de cercetași din 176 de țări.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Radioamatorism, cod Morse, videoconferințe globale, prietenii internaționale.
+          </div>
+        </div>
+
+        <!-- 11. Campuri FARA -->
+        <div class="activity-card" data-category="colaborari">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment" style="background: #fee2e2; color: #b91c1c;">Colaborare • Solidaritate</span>
+            <div class="activity-icon-round">🤝</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Campuri FARA</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Parteneriat social și educațional dedicat integrării și aducerii de bucurie copiilor din medii vulnerabile prin tabere de vară, ateliere de joc și incluziune comunitară.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Fundația FARA, solidaritate socială, jocuri incluzive.
+          </div>
+        </div>
+
+        <!-- 12. Parteneriat Logiscool -->
+        <div class="activity-card" data-category="colaborari">
+          <div class="activity-card-header">
+            <span class="activity-badge eveniment" style="background: #e0f2fe; color: #0369a1;">Colaborare • Digital Scout</span>
+            <div class="activity-icon-round">💻</div>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--slate-900); margin-bottom: 0.5rem;">Ateliere Logiscool</h3>
+          <p style="font-size: 0.95rem; color: var(--slate-600); line-height: 1.6; flex: 1;">
+            Îmbinăm viața în natură cu abilitățile digitale ale viitorului! Ateliere interactive de programare, robotică, siguranță pe internet și logică aplicată în parteneriat cu Logiscool Suceava.
+          </p>
+          <div style="background: var(--slate-50); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--slate-700); margin-top: 1rem;">
+            <strong>Repere:</strong> Robotică, coding, alfabetizare digitală responsabilă.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.svg" alt="Siglă Cercetașii României Suceava" width="48" height="48">
+            <div class="brand-text">
+              <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
+              <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Organizația Națională „Cercetașii României” - Centrul Local „Ținutul Fagilor” Suceava. Educație non-formală, dezvoltare de caracter și aventură în natură din 1992.
+          </p>
+          <div class="footer-badge-scout">
+            ⚜️ Membru WOSM (World Organization of the Scout Movement)
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Despre & Structură</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Acasă</a></li>
+            <li><a href="despre-noi.html">Despre Noi (Cine suntem)</a></li>
+            <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
+            <li><a href="echipa.html">Echipa & Consiliul Director</a></li>
+            <li><a href="ce-este-cercetasia.html">Ce este Cercetășia?</a></li>
+            <li><a href="ramuri-de-varsta.html">Ramuri de Vârstă</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Activități & Proiecte</h4>
+          <ul class="footer-links">
+            <li><a href="activitati.html">Activități de Centru & Campuri</a></li>
+            <li><a href="activitati.html#evenimente">Evenimente Scout</a></li>
+            <li><a href="proiecte.html">Festivalul Luminii</a></li>
+            <li><a href="proiecte.html#cadou">Ordinul Cadoului Fermecat</a></li>
+            <li><a href="proiecte.html#lumina-pacii">Lumina Păcii</a></li>
+            <li><a href="parteneri.html">Parteneri & Colaboratori</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Implicare & Siguranță</h4>
+          <ul class="footer-links">
+            <li><a href="safe-from-harm.html">Politica Safe from Harm</a></li>
+            <li><a href="donatii.html">Donații & Sponsorizări</a></li>
+            <li><a href="donatii.html#formular230">Redirecționează 3.5%</a></li>
+            <li><a href="ce-este-cercetasia.html#parinti">Ghid pentru Părinți</a></li>
+            <li><a href="ce-este-cercetasia.html#adulti">Devino Voluntar Adult</a></li>
+            <li><a href="contact.html">Înscrieri & Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          © 1992 - 2026 Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="safe-from-harm.html">Protecția Copilului (Safe from Harm)</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
