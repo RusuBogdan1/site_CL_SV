@@ -14,11 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.setAttribute('aria-expanded', isExpanded);
     });
 
-    // Close menu when clicking outside or on a link
+    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Mobile dropdown toggle on click
+    const dropdownWrappers = document.querySelectorAll('.nav-dropdown-wrapper');
+    dropdownWrappers.forEach(wrapper => {
+      const parentLink = wrapper.querySelector('.nav-link');
+      if (parentLink) {
+        parentLink.addEventListener('click', (e) => {
+          if (window.innerWidth <= 1080) {
+            wrapper.classList.toggle('open');
+          }
+        });
       }
     });
   }
@@ -35,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Tabs Functionality (General)
+  // General Tabs Functionality
   const tabContainers = document.querySelectorAll('.tabs-container');
   tabContainers.forEach(container => {
     const tabBtns = container.querySelectorAll('.tab-btn');
@@ -49,13 +62,61 @@ document.addEventListener('DOMContentLoaded', () => {
         tabContents.forEach(c => c.classList.remove('active'));
 
         btn.classList.add('active');
-        const targetContent = container.querySelector(`#${targetId}`);
+        const targetContent = container.querySelector('#' + targetId);
         if (targetContent) {
           targetContent.classList.add('active');
         }
       });
     });
   });
+
+  // Gallery Filtering (Trecut - Prezent)
+  const galleryFilterBtns = document.querySelectorAll('.gallery-filter-bar .filter-btn');
+  const galleryCards = document.querySelectorAll('.gallery-grid .gallery-card');
+
+  if (galleryFilterBtns.length > 0 && galleryCards.length > 0) {
+    galleryFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-filter');
+
+        galleryCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeIn 0.3s ease';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Activities Filtering
+  const activityFilterBtns = document.querySelectorAll('.activity-filter-bar .filter-btn');
+  const activityCards = document.querySelectorAll('.activities-grid .activity-card');
+
+  if (activityFilterBtns.length > 0 && activityCards.length > 0) {
+    activityFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activityFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        activityCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeIn 0.3s ease';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 
   // Timeline Filtering (Istoric)
   const filterBtns = document.querySelectorAll('.timeline-filter-bar .filter-btn');
@@ -88,7 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = header.parentElement;
       const isActive = item.classList.contains('active');
 
-      // Close all other accordion items
       const parent = item.parentElement;
       if (parent) {
         parent.querySelectorAll('.accordion-item').forEach(otherItem => {
@@ -124,38 +184,44 @@ document.addEventListener('DOMContentLoaded', () => {
       let branchAgeRange = '';
       let branchColor = '';
       let branchDescription = '';
-      let branchLink = 'ce-este-cercetasia.html#ramuri';
+      let branchLink = 'ramuri-de-varsta.html';
 
       if (age >= 7 && age <= 10) {
         branchName = 'Lupișori';
         branchAgeRange = '7 - 10 ani';
         branchColor = '#b45309';
         branchDescription = 'Lumea poveștilor din Cartea Junglei, a jocurilor pline de energie și a primilor pași în echipă (patrulă). Înveți să fii curios și să ajuți!';
+        branchLink = 'ramuri-de-varsta.html#lupisori';
       } else if (age >= 11 && age <= 14) {
         branchName = 'Temerari';
         branchAgeRange = '11 - 14 ani';
         branchColor = '#065f46';
         branchDescription = 'Aventură pură, orientare pe busolă și hartă, campuri în corturi, foc de tabără și primele mari responsabilități în patrulă.';
+        branchLink = 'ramuri-de-varsta.html#temerari';
       } else if (age >= 15 && age <= 18) {
         branchName = 'Exploratori';
         branchAgeRange = '15 - 18 ani';
         branchColor = '#c2410c';
         branchDescription = 'Inițiativă, proiecte pentru comunitate, expediții montane, autonomie și dezvoltarea abilităților de lider.';
+        branchLink = 'ramuri-de-varsta.html#exploratori';
       } else if (age >= 19 && age <= 24) {
         branchName = 'Seniori';
         branchAgeRange = '19 - 24 ani';
         branchColor = '#581c87';
         branchDescription = 'Implicare activă, suport pentru comunitate, pregătire pentru viața profesională și proiecte de mare impact.';
+        branchLink = 'ramuri-de-varsta.html#seniori';
       } else if (age > 24) {
         branchName = 'Lider Adult / Voluntar CL';
         branchAgeRange = 'Adulți & Părinți';
         branchColor = '#134074';
         branchDescription = 'Fii mentor pentru generațiile viitoare! Alătură-te echipei de lideri și voluntari adulți din Suceava pentru a ghida copiii și tinerii.';
+        branchLink = 'ce-este-cercetasia.html#adulti';
       } else {
         branchName = 'Viitor Cercetaș';
         branchAgeRange = 'Sub 7 ani';
         branchColor = '#2563eb';
         branchDescription = 'Ești încă un pic micuț, dar abia așteptăm să împlinești 7 ani pentru a te alătura lupișorilor noștri!';
+        branchLink = 'ramuri-de-varsta.html';
       }
 
       calcResult.innerHTML = `
@@ -181,18 +247,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Pre-fill branch in contact form if URL query param exists
-  const urlParams = new URLSearchParams(window.location.search);
-  const selectedBranch = urlParams.get('branch');
-  const formBranchSelect = document.getElementById('branchSelect');
-  if (formBranchSelect && selectedBranch) {
-    for (let i = 0; i < formBranchSelect.options.length; i++) {
-      if (formBranchSelect.options[i].text.toLowerCase().includes(selectedBranch.toLowerCase())) {
-        formBranchSelect.selectedIndex = i;
-        break;
-      }
+  // Toast System
+  window.showToast = function(message) {
+    let toast = document.getElementById('siteToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'siteToast';
+      toast.className = 'toast-box';
+      document.body.appendChild(toast);
     }
-  }
+    toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3500);
+  };
+
+  // Copy to clipboard helper (e.g. IBAN)
+  const copyBtns = document.querySelectorAll('.copy-iban-btn');
+  copyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const textToCopy = btn.getAttribute('data-clipboard') || 'RO00RZBR0000000000000000';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast('Codul IBAN a fost copiat în clipboard!');
+          const origText = btn.textContent;
+          btn.textContent = 'Copiat!';
+          setTimeout(() => { btn.textContent = origText; }, 2000);
+        });
+      } else {
+        showToast('IBAN: ' + textToCopy);
+      }
+    });
+  });
 
   // Contact / Registration Form submission
   const registerForm = document.getElementById('scoutRegisterForm');
