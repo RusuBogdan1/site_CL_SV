@@ -2492,3 +2492,9 @@ ul, ol {
     align-items: flex-start;
   }
 }
+
+img[src*="logo"] {
+    border-radius: 50%;
+    clip-path: circle(46.5% at 50% 50%);
+    object-fit: cover; 
+}
