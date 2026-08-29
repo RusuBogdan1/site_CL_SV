@@ -22,19 +22,29 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Mobile dropdown toggle on click
+// Mobile dropdown toggle on click (deschide / închide la click-uri succesive)
     const dropdownWrappers = document.querySelectorAll('.nav-dropdown-wrapper');
     dropdownWrappers.forEach(wrapper => {
       const parentLink = wrapper.querySelector('.nav-link');
       if (parentLink) {
         parentLink.addEventListener('click', (e) => {
           if (window.innerWidth <= 1080) {
-            wrapper.classList.toggle('open');
+            e.preventDefault();
+            
+            const isOpen = wrapper.classList.contains('open');
+
+            // Închidem toate dropdown-urile
+            dropdownWrappers.forEach(w => w.classList.remove('open'));
+
+            // Toggle starea
+            if (!isOpen) {
+              wrapper.classList.add('open');
+            }
           }
         });
       }
     });
-
+    
     // Mobile submenu toggle on click
     const submenuWrappers = document.querySelectorAll('.dropdown-submenu-wrapper');
     submenuWrappers.forEach(wrapper => {
