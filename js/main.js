@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+
   }
 
   // Activities Filtering
@@ -99,6 +100,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const activityCards = document.querySelectorAll('.activities-grid .activity-card');
 
   if (activityFilterBtns.length > 0 && activityCards.length > 0) {
+    activityCards.forEach(card => {
+      card.style.display = 'none';
+    });
+
     activityFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         activityFilterBtns.forEach(b => b.classList.remove('active'));
