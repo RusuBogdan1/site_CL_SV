@@ -118,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+
   }
 
   // Activities Filtering
@@ -159,6 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (activityFilterBtns.length > 0 && activityCards.length > 0) {
+    activityCards.forEach(card => {
+      card.style.display = 'none';
+    });
+
     activityFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.getAttribute('data-filter');
