@@ -34,6 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+
+    // Close mobile menu when clicking sub-links
+    const dropdownSubLinks = document.querySelectorAll('.dropdown-menu a');
+    dropdownSubLinks.forEach(subLink => {
+      subLink.addEventListener('click', () => {
+        if (window.innerWidth <= 1080) {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 
   // Sticky Header scroll styling
