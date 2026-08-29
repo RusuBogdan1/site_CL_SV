@@ -34,6 +34,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+
+    // Mobile submenu toggle on click
+    const submenuWrappers = document.querySelectorAll('.dropdown-submenu-wrapper');
+    submenuWrappers.forEach(wrapper => {
+      const subToggle = wrapper.querySelector('.dropdown-submenu-toggle');
+      if (subToggle) {
+        subToggle.addEventListener('click', (e) => {
+          if (window.innerWidth <= 1080) {
+            e.preventDefault();
+            e.stopPropagation();
+            wrapper.classList.toggle('open');
+          }
+        });
+      }
+    });
+
+    // Close mobile menu when clicking leaf/actionable sub-links
+    const allTerminalSubLinks = document.querySelectorAll('.dropdown-menu a:not(.dropdown-submenu-toggle), .dropdown-submenu a');
+    allTerminalSubLinks.forEach(subLink => {
+      subLink.addEventListener('click', () => {
+        if (window.innerWidth <= 1080) {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
   }
 
   // Sticky Header scroll styling
@@ -99,6 +125,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const activityFilterBtns = document.querySelectorAll('.activity-filter-bar .filter-btn');
   const activityCards = document.querySelectorAll('.activities-grid .activity-card');
 
+  function applyActivityFilter(filter, scrollIntoView = false) {
+    if (activityFilterBtns.length === 0 || activityCards.length === 0) return;
+
+    activityFilterBtns.forEach(btn => {
+      if (btn.getAttribute('data-filter') === filter) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    activityCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+        card.style.animation = 'fadeIn 0.3s ease';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (scrollIntoView) {
+      const targetElement = document.querySelector('.activity-filter-bar') || document.querySelector('.activities-grid');
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
   if (activityFilterBtns.length > 0 && activityCards.length > 0) {
     activityCards.forEach(card => {
       card.style.display = 'none';
@@ -106,19 +166,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     activityFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        activityFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
         const filter = btn.getAttribute('data-filter');
+        applyActivityFilter(filter, false);
+      });
+    });
 
-        activityCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'flex';
-            card.style.animation = 'fadeIn 0.3s ease';
-          } else {
-            card.style.display = 'none';
+    const handleActivityHash = (shouldScroll = false) => {
+      const hash = window.location.hash.replace('#', '').toLowerCase();
+      if (['centru', 'evenimente', 'colaborari'].includes(hash)) {
+        applyActivityFilter(hash, shouldScroll);
+      } else {
+        applyActivityFilter('centru', shouldScroll);
+      }
+    };
+
+    if (window.location.hash) {
+      setTimeout(() => {
+        handleActivityHash(true);
+      }, 100);
+    } else {
+      // Default to Activități de Centru on load
+      applyActivityFilter('centru', false);
+    }
+
+    window.addEventListener('hashchange', () => {
+      handleActivityHash(true);
+    });
+
+    // Intercept clicks on activity hash links if already on page
+    document.querySelectorAll('a[href*="activitati.html#"], a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', () => {
+        const href = anchor.getAttribute('href');
+        const hashIndex = href.indexOf('#');
+        if (hashIndex !== -1) {
+          const hash = href.substring(hashIndex + 1).toLowerCase();
+          if (['centru', 'evenimente', 'colaborari'].includes(hash)) {
+            applyActivityFilter(hash, true);
           }
-        });
+        }
       });
     });
   }
