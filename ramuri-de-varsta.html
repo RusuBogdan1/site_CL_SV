@@ -23,7 +23,7 @@
         </div>
       </a>
 
-      <nav class="main-nav">
+                  <nav class="main-nav">
         <ul class="nav-links" id="navLinks">
           <li><a href="index.html" class="nav-link">Acasă</a></li>
           
@@ -38,10 +38,6 @@
             </ul>
           </li>
 
-          <li><a href="ce-este-cercetasia.html" class="nav-link">Ce este Cercetășia?</a></li>
-          <li><a href="ramuri-de-varsta.html" class="nav-link active">Ramuri de Vârstă</a></li>
-          <li><a href="activitati.html" class="nav-link">Activități</a></li>
-          <li><a href="proiecte.html" class="nav-link">Proiecte în Comunitate</a></li>
           <li class="nav-dropdown-wrapper">
             <a href="ce-este-cercetasia.html" class="nav-link">
               Ce este Cercetășia? <span class="dropdown-caret">▾</span>
@@ -58,17 +54,10 @@
               Ramuri de Vârstă <span class="dropdown-caret">▾</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a href="#prezentare-ramuri">Prezentarea fiecărei ramuri de vârstă</a></li>
-              <li class="dropdown-submenu-wrapper">
-                <a href="#activitati-ramura" class="dropdown-submenu-toggle">
-                  Activități pe ramură <span class="submenu-caret">▸</span>
-                </a>
-                <ul class="dropdown-submenu">
-                  <li><a href="#activitati-lupisori">Activități Lupișori</a></li>
-                  <li><a href="#activitati-temerari">Activități Temerari</a></li>
-                  <li><a href="#activitati-exploratori">Activități Exploratori</a></li>
-                </ul>
-              </li>
+              <li><a href="ramuri-de-varsta.html#lupisori">Lupișori (7–10 ani)</a></li>
+              <li><a href="ramuri-de-varsta.html#temerari">Temerari (11–14 ani)</a></li>
+              <li><a href="ramuri-de-varsta.html#exploratori">Exploratori (15–18 ani)</a></li>
+              <li><a href="ramuri-de-varsta.html#seniori">Seniori (19–24 ani)</a></li>
             </ul>
           </li>
           <li class="nav-dropdown-wrapper">
@@ -94,13 +83,13 @@
         </a>
 
         <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul de navigare" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </nav>
     </div>
   </header>
 
-  <!-- Page Header -->
+    <!-- Page Header -->
   <header class="page-header">
     <div class="container">
       <div class="breadcrumbs">
@@ -119,58 +108,12 @@
           <div>
             <span class="branch-badge-age lupisori">7 – 10 ani</span>
             <h2>🐺 Lupișori</h2>
-  <!-- Quick Nav Pills -->
-  <section style="background: var(--white); border-bottom: 1px solid var(--slate-200); padding: 1rem 0;">
-    <div class="container">
-      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-        <a href="#prezentare-ramuri" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">📌 1. Prezentarea fiecărei ramuri de vârstă</a>
-        <a href="#activitati-ramura" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">🏕️ 2. Activități pe Ramură</a>
-        <a href="#activitati-lupisori" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--gold-100); color: var(--gold-800); border-color: var(--gold-300);">🐺 Lupișori</a>
-        <a href="#activitati-temerari" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: #d1fae5; color: #065f46; border-color: #a7f3d0;">🧭 Temerari</a>
-        <a href="#activitati-exploratori" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--amber-100); color: var(--amber-700); border-color: var(--amber-300);">⛰️ Exploratori</a>
-        <a href="#activitati-seniori" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.82rem; background: var(--purple-100); color: var(--purple-800); border-color: var(--purple-300);">⚜️ Seniori</a>
-        <a href="#progres-spices" class="btn btn-secondary" style="padding: 0.4rem 1rem; font-size: 0.85rem;">📊 Sistemul SPICES</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECȚIUNEA 1: Prezentarea fiecărei ramuri de vârstă -->
-  <section id="prezentare-ramuri" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Secțiunea 1 • Etape Pedagogice</span>
-        <h2 class="section-title">Prezentarea fiecărei ramuri de vârstă</h2>
-        <p class="section-desc">
-          În cadrul Organizației Naționale „Cercetașii României”, activitățile sunt structurate pe ramuri de vârstă, fiecare având un cadru simbolic, o deviză proprie și un sistem specific de progres pedagogic.
-        </p>
-      </div>
-      
-      <!-- 1.1 Lupișori -->
-      <div id="lupisori" class="branch-card-full lupisori">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age lupisori">Grupa de Vârstă: 7 – 10 Ani</span>
-            <h3 style="font-size: 2rem; color: var(--gold-700); margin: 0.5rem 0 0.25rem;">Ramura Lupișori</h3>
-            <p style="font-size: 1.05rem; color: var(--slate-700); margin: 0;"><strong>Deviza:</strong> „Curaj și voie bună!” • „Cea mai bună încercare!”</p>
-          </div>
-          <div style="width: 70px; height: 70px; background: var(--gold-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-            🐺
           </div>
           <div class="branch-card-emoji lupisori-emoji" aria-hidden="true">🐺</div>
         </div>
         <div class="branch-copy">
           <p>Modelul folosit pentru lupişori drept cadru simbolic este <strong>Cartea Junglei</strong> scrisă de Rudyard Kipling.</p>
           <p><strong>Lupișorii</strong> învață să stăpânească noi abilități și încearcă lucruri noi. Se distrează și merg în aventuri. Își fac noi prieteni și sunt curioși de lumea din jurul lor. Vor să-i ajute pe ceilalți și să fie activi în propriile lor comunități. În fiecare săptămână, lupișorii se adună în Haitic pentru a lua parte alături de Mowgli și prietenii lui din Junglă la o mulțime de activități interesante și provocatoare, realizând orice și-au propus și distrându-se mult pe parcurs.</p>
-
-        <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7;">
-          Lupișorii sunt cei mai mici membri ai familiei scout. La această vârstă, energia este la cote maxime, iar lumea se descoperă prin <strong>joc, poveste și acțiune directă</strong>. Lupișorii sunt organizați în „Sixenii” (grupuri mici de 6 copii) în cadrul „Haitei”.
-        </p>
-
-        <div class="branch-symbolic-box" style="background: linear-gradient(135deg, #78350f, #b45309);">
-          <div class="branch-symbolic-title">📖 Cadrul Simbolic: Cartea Junglei (Rudyard Kipling)</div>
-          <p style="font-size: 0.95rem; color: var(--gold-100); margin: 0; line-height: 1.6;">
-            Universul lupișorilor este inspirat din povestea lui Mowgli. Liderii poartă nume de personaje înțelepte (Akela - bătrânul lup înțelept, Baloo - ursul educator, Bagheera - pantera agilă). Prin „Stânca Sfatului” și „Legea Haitei”, lupișorii învață că un cercetaș este ascultător, harnic, curajos și prietenos.
-          </p>
         </div>
         <a class="branch-photos-button" href="Activitati poze/poze-lupisori.html">Activitati Lupisori&gt;&gt;</a>
       </article>
@@ -180,43 +123,6 @@
           <div>
             <span class="branch-badge-age temerari">11 – 14 ani</span>
             <h2>🧭 Temerari</h2>
-        <!-- Sistemul de progres Lupișori -->
-        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 1.5rem;">
-          <h4 style="font-size: 1.15rem; color: var(--slate-900); margin-bottom: 0.75rem;">⭐ Sistemul de Progres la Lupișori</h4>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Progresul este personalizat și marcat prin etape vizuale care recompensează efortul și noile deprinderi:
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--gold-700); display: block;">1. Puiul de Lup</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Perioada de acomodare, învățarea primelor jocuri și a Legii Haitei.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--gold-700); display: block;">2. Prima Stea (Ochiul Drept)</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Deprinderi de autonomie personală, igienă, ajutor dat în haită.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--gold-700); display: block;">3. A Doua Stea (Ochiul Stâng)</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Responsabilități în sixenie, cunoașterea naturii, abilități practice.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--gold-700); display: block;">4. Lupul Cenușiu & Insigne</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Pregătirea pentru trecerea la Temerari și insigne de aptitudini (artist, naturalist, meșter).</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 1.2 Temerari -->
-      <div id="temerari" class="branch-card-full temerari">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age temerari">Grupa de Vârstă: 11 – 14 Ani</span>
-            <h3 style="font-size: 2rem; color: #065f46; margin: 0.5rem 0 0.25rem;">Ramura Temerari</h3>
-            <p style="font-size: 1.05rem; color: var(--slate-700); margin: 0;"><strong>Deviza:</strong> „Gata Oricând!”</p>
-          </div>
-          <div style="width: 70px; height: 70px; background: #d1fae5; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-            🧭
           </div>
           <div class="branch-card-emoji temerari-emoji" aria-hidden="true">🧭</div>
         </div>
@@ -232,180 +138,11 @@
           <div>
             <span class="branch-badge-age exploratori">15 – 18 ani</span>
             <h2>⛰️ Exploratori</h2>
-
-        <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7;">
-          Vârsta marilor provocări și a spiritului de explorator! Temerarii își desfășoară activitatea în <strong>Patrule</strong> (echipe autonome de 6–8 membri cu lider de patrulă ales dintre ei), unde își dezvoltă leadershipul, camaraderia și abilitățile practice outdoor.
-        </p>
-
-        <div class="branch-symbolic-box" style="background: linear-gradient(135deg, #064e3b, #047857);">
-          <div class="branch-symbolic-title">🗺️ Cadrul Simbolic: Aventura & Marea Explorare</div>
-          <p style="font-size: 0.95rem; color: #d1fae5; margin: 0; line-height: 1.6;">
-            Patrulele au totemuri și strigăte proprii (Vulturii, Cerbii, Lupii Negri). Temerarii sunt exploratori autonomi: învață să monteze un cort pe orice vreme, să gătească la foc de lemne, să folosească busola și harta și să depășească orice obstacol în echipă.
-          </p>
-        </div>
-
-        <!-- Sistemul de progres Temerari -->
-        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 1.5rem;">
-          <h4 style="font-size: 1.15rem; color: var(--slate-900); margin-bottom: 0.75rem;">🧭 Sistemul de Progres la Temerari</h4>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Etapele de progres ale temerariului (marcate prin eșarfe, noduri și insigne de merit):
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: #065f46; display: block;">1. Pășitor</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Integrarea în patrulă, cunoașterea nodurilor de bază și a echipamentului.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: #065f46; display: block;">2. Explorator</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Orientare cu busola, prim ajutor de bază, campare la cort și gătit în natură.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--slate-200); border: 1px solid var(--slate-200);">
-              <strong style="color: #065f46; display: block;">3. Cavaler Scout</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Coordonarea unei activități de patrulă, supraviețuire și proiecte civice.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: #065f46; display: block;">4. Insigne de Merit</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Peste 30 de insigne: Pionierat, Orientare, Prim Ajutor, Supraviețuire, Ecologie.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 1.3 Exploratori -->
-      <div id="exploratori" class="branch-card-full exploratori">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age exploratori">Grupa de Vârstă: 15 – 18 Ani</span>
-            <h3 style="font-size: 2rem; color: var(--amber-600); margin: 0.5rem 0 0.25rem;">Ramura Exploratori</h3>
-            <p style="font-size: 1.05rem; color: var(--slate-700); margin: 0;"><strong>Deviza:</strong> „Gata Oricând!” • „Urmează-ți drumul!”</p>
-          </div>
-          <div style="width: 70px; height: 70px; background: var(--amber-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-            ⛰️
-          </div>
-        </div>
-
-        <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7;">
-          Exploratorii sunt adolescenții care își iau viitorul în propriile mâini. Cu o mare autonomie de decizie, exploratorii organizează mari proiecte comunitare, fac expediții montane de anduranță și își definesc valorile ca viitori cetățeni activi.
-        </p>
-
-        <div class="branch-symbolic-box" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">
-          <div class="branch-symbolic-title">🚀 Cadrul Simbolic: Descoperirea Drumului în Viață</div>
-          <p style="font-size: 0.95rem; color: var(--amber-100); margin: 0; line-height: 1.6;">
-            Adolescentul este un căutător de sens. Prin proiecte autogestionate (Entreprise scout), expediții alpine autonome și dezbateri, exploratorul învață să conducă echipe, să gestioneze bugete și să acționeze cu responsabilitate socială.
-          </p>
-        </div>
-
-        <!-- Sistemul de progres Exploratori -->
-        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 1.5rem; margin-top: 1.5rem;">
-          <h4 style="font-size: 1.15rem; color: var(--slate-900); margin-bottom: 0.75rem;">⛰️ Sistemul de Progres la Exploratori</h4>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Etape orientate spre autodepășire, inițiativă civică și leadership:
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--amber-600); display: block;">1. Căutare & Inițiere</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Stabilirea obiectivelor personale de creștere și integrarea în unitate.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--amber-600); display: block;">2. Acțiune & Expediție</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Planificarea și realizarea unei expediții autonome montane (Raider scout).</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--amber-600); display: block;">3. Afirmare & Proiect Civic</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Coordonarea Festivalului Luminii, campaniilor caritabile sau acțiunilor ecologice.</span>
-            </div>
-            <div style="background: var(--white); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--slate-200);">
-              <strong style="color: var(--amber-600); display: block;">4. Recunoaștere Scout Națională</strong>
-              <span style="font-size: 0.85rem; color: var(--slate-600);">Participare la Campurile Naționale de Exploratori și transfer spre Seniorat.</span>
-            </div>
           </div>
           <div class="branch-card-emoji exploratori-emoji" aria-hidden="true">⛰️</div>
         </div>
         <div class="branch-copy">
           <p><strong>Exploratorii</strong> sunt tineri cu iniţiativă, doritori de a ajuta, de a participa active în comunitate. Cadrul simbolic este cetatea. Comunitatea reprezentată simbolic prin cetate, este locul unde, pas cu pas, descoperă că trăiesc în chiar interiorul ei, că au de învățat de la tot ce oferă ea şi mai departe vor ajunge să fie activi prin a se implica şi a realiza diferite proiecte astfel încât, atunci când ei vor fi pregătiţi să îşi vadă rezultatele şi să meargă mai departe, să facă acest lucru prin organizarea unui mare eveniment – unul de neuitat pentru ei.</p>
-      </div>
-
-      <!-- 1.4 Seniori & Lideri -->
-      <div id="seniori" class="branch-card-full seniori">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age seniori">Grupa de Vârstă: 19 – 24 Ani & Adulți</span>
-            <h3 style="font-size: 2rem; color: var(--purple-700); margin: 0.5rem 0 0.25rem;">Ramura Seniori & Lideri Adulți</h3>
-            <p style="font-size: 1.05rem; color: var(--slate-700); margin: 0;"><strong>Deviza:</strong> „Servim!” (Slujire și Mentorat)</p>
-          </div>
-          <div style="width: 70px; height: 70px; background: var(--purple-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem;">
-            ⚜️
-          </div>
-        </div>
-
-        <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7;">
-          Seniorii și liderii adulți sunt coloana vertebrală a centrului nostru local. Tinerii adulți își folosesc abilitățile pentru a servi comunitatea, pentru a coordona activitățile pe ramuri de vârstă și pentru a asigura continuitatea scoutismului în Suceava.
-        </p>
-
-        <div class="branch-symbolic-box" style="background: linear-gradient(135deg, #3b0764, #581c87);">
-          <div class="branch-symbolic-title">🌟 Cadrul Simbolic: Slujire, Mentorat & Lider Comunitar</div>
-          <p style="font-size: 0.95rem; color: var(--purple-100); margin: 0; line-height: 1.6;">
-            Seniorii îmbină viața profesională și universitară cu spiritul cercetășesc, devenind modele și mentori pentru generațiile mai tinere. Prin implicare activă, oferă copiilor un cadru sigur și educativ.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECȚIUNEA 2: Activități pe ramură -->
-  <section id="activitati-ramura" class="section" style="background-color: var(--slate-100);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag amber">Secțiunea 2 • Programe & Experiențe Practice</span>
-        <h2 class="section-title">Activități pe ramură</h2>
-        <p class="section-desc">
-          Fiecare grupă de vârstă beneficiază de activități dedicate care transpun metoda scout în experiențe practice captivante, adaptate nevoilor psihologice și nivelului de independență.
-        </p>
-      </div>
-
-      <!-- 2.1 Activități Lupișori -->
-      <div id="activitati-lupisori" class="branch-card-full lupisori" style="margin-bottom: 2rem;">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age lupisori">Grupa de Vârstă: 7 – 10 Ani</span>
-            <h3 style="font-size: 1.85rem; color: var(--gold-700); margin: 0.4rem 0 0.2rem;">🐾 Activități Lupișori</h3>
-            <p style="font-size: 0.95rem; color: var(--slate-600); margin: 0;">Învățare prin joc, poveste, creativitate și primele descoperiri în natură</p>
-          </div>
-          <div style="font-size: 2.2rem; background: var(--gold-100); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            🐺
-          </div>
-        </div>
-
-        <p style="font-size: 1rem; color: var(--slate-700); line-height: 1.65; margin-bottom: 1.25rem;">
-          La lupișori, fiecare activitate este o poveste vie în care micii cercetași explorează lumea în siguranță, își fac prieteni pe viață și își dezvoltă îndemânarea și curajul:
-        </p>
-
-        <div class="branch-activities-grid">
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">🏃‍♂️ Mari Jocuri de Mișcare</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Jocuri dinamice de strategie, cooperare și ștafete în parcurile din Suceava (Parcul Șipote, Parcul Universității) și spații verzi.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">🎨 Ateliere Creative & Meșteșuguri</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Confecționare de gulgute pentru Festivalul Luminii, pictură pe pietre, modelaj, desen și mici decorațiuni din materiale reciclate.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">⛺ Campuri de Lupișori</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Tabere la cabane montane sau centre scout (Drăguș, Tecuci, Sadova), seri de neuitat la foc de tabără cu cântece scout și povești sub stele.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">🌱 Explorarea Naturii & Urmărire</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Identificarea urmelor de animale, recunoașterea frunzelor și a copacilor din Bucovina, orientare simplă după soare și mușchiul copacilor.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">🗺️ Vânătoare de Comori</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Trasee cu indicii secrete, hărți desenate și ghicitori care stimulează curiozitatea, atenția la detalii și lucrul în echipă.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--gold-800);">🤝 Fapta Bună Zilnică</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Misiuni secrete de ajutorare a colegilor, mici acțiuni de curățenie și deprinderea bunătății și a respectului față de ceilalți.</p>
-          </div>
         </div>
         <a class="branch-photos-button" href="Activitati poze/activitati-exploratori.html">Activități Exploratori&gt;&gt;</a>
       </article>
@@ -415,174 +152,11 @@
           <div>
             <span class="branch-badge-age seniori">19 – 24 ani</span>
             <h2>⚜️ Seniori</h2>
-      <!-- 2.2 Activități Temerari -->
-      <div id="activitati-temerari" class="branch-card-full temerari" style="margin-bottom: 2rem;">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age temerari">Grupa de Vârstă: 11 – 14 Ani</span>
-            <h3 style="font-size: 1.85rem; color: #065f46; margin: 0.4rem 0 0.2rem;">🧭 Activități Temerari</h3>
-            <p style="font-size: 0.95rem; color: var(--slate-600); margin: 0;">Aventură outdoor, patrule autonome, pionierat, campare la cort și orientare</p>
-          </div>
-          <div style="font-size: 2.2rem; background: #d1fae5; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            ⛺
           </div>
           <div class="branch-card-emoji seniori-emoji" aria-hidden="true">⚜️</div>
         </div>
         <div class="branch-copy">
           <p><strong>Seniorul</strong> este un călător pornit pe drumul propriu de dezvoltare personală, spre maturitate. Se află într-o continuă căutare a propriului EU, în definirea propriului caracter, în crearea unui sistem de valori propriu, în descoperirea propriului loc în cadrul societăţii. Călătoria reprezintă practic drumul propriu de dezvoltare personală, un drum presărat de provocări, un drum care îndeamnă la autodepăşire. Aceasta este formată din trei etape, fiecare reprezentând un stadiu specific de dezvoltare a cercetaşului, şi anume: hoinarul, ucenicul şi călăuza.</p>
-
-        <p style="font-size: 1rem; color: var(--slate-700); line-height: 1.65; margin-bottom: 1.25rem;">
-          Temerarii trăiesc adevărata aventură scout prin acțiuni directe în mijlocul naturii, dezvoltându-și curajul, reziliența și autonomia de patrulă:
-        </p>
-
-        <div class="branch-activities-grid">
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">🧭 Orientare cu Azimut & Hartă</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Trasee de orientare cu busola și harta topografică în pădurile Sucevei și participare activă la competiția tradițională „Cupa Izvoarelor”.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">🪵 Noduri & Pionierat Scout</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Construcții ingenioase din bârne de lemn și frânghii fără cuie (mese de patrulă, turnuri de veghe, foișoare, poduri suspendate și catarge).</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">⛺ Campuri de Vară la Cort (7–10 Zile)</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Viață completă la cort, amenajarea subcampului de patrulă, gătit la foc de lemne sau arzător și program intens de activități alpine.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">🔥 Supraviețuire & Prim Ajutor</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Construire de adăposturi improvizate (bivuac), tehnici de aprindere a focului în siguranță, purificarea apei și acordarea primului ajutor.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">🥾 Hike de Patrulă & Drumeții Montane</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Marșuri pedestre cu rucsacul în spate pe traseele montane din Bucovina (Masivul Rarău, Giumalău, Mestecăniș, Obcinele Bucovinei).</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: #065f46;">🎯 Mari Jocuri de Strategie & Noapte</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Jocuri complexe de cucerire a steagului, mesaje cifrate (morse, semafor), jocuri de noapte și probe de cooperare sub presiune.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2.3 Activități Exploratori -->
-      <div id="activitati-exploratori" class="branch-card-full exploratori" style="margin-bottom: 2rem;">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age exploratori">Grupa de Vârstă: 15 – 18 Ani</span>
-            <h3 style="font-size: 1.85rem; color: var(--amber-600); margin: 0.4rem 0 0.2rem;">⛰️ Activități Exploratori</h3>
-            <p style="font-size: 0.95rem; color: var(--slate-600); margin: 0;">Expediții alpine de anduranță, organizarea marilor proiecte civice și leadership</p>
-          </div>
-          <div style="font-size: 2.2rem; background: var(--amber-100); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            🚀
-          </div>
-        </div>
-
-        <p style="font-size: 1rem; color: var(--slate-700); line-height: 1.65; margin-bottom: 1.25rem;">
-          Exploratorii își asumă responsabilități reale: de la trasee alpine dificile până la organizarea marilor festivaluri ale Sucevei și proiecte caritabile de anvergură:
-        </p>
-
-        <div class="branch-activities-grid">
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">🥾 Expediții Alpine Autonome (Raider)</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Trasee pe crestele Carpaților Orientali (Rarău, Giumalău, Călimani, Rodnei), orientare pe timp de noapte sau vreme nefavorabilă și anduranță.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">🕯️ Organizarea Festivalului Luminii</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Exploratorii sunt inima organizatorică: coordonarea atelierelor interactive, instalarea zecilor de mii de gulgute și coordonarea voluntarilor.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">🎁 Ordinul Cadoului Fermecat & Social</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Colectarea de donații, împachetarea și distribuirea a sute de pachete de Crăciun pentru copiii din satele defavorizate din județ.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">🌍 Evenimente Naționale & Jamboree</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Reprezentarea Sucevei la ROJAM, conferințe naționale de tineret, proiecte Erasmus+ de schimb intercultural și JOTA-JOTI pe unde radio.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">💼 Mentorat & Dezvoltare de Carieră</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Ateliere de public speaking, management financiar, leadership, scriere de proiecte europene și orientare universitară.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--amber-700);">🕊️ Campania Lumina Păcii de la Betleem</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Preluarea flăcării de la graniță și distribuirea ei în biserici, spitale, cămine de bătrâni și instituții din întreg municipiul Suceava.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2.4 Activități Seniori & Lideri -->
-      <div id="activitati-seniori" class="branch-card-full seniori" style="margin-bottom: 0;">
-        <div class="branch-header-flex">
-          <div>
-            <span class="branch-badge-age seniori">Grupa de Vârstă: 19 – 24+ Ani</span>
-            <h3 style="font-size: 1.85rem; color: var(--purple-700); margin: 0.4rem 0 0.2rem;">⚜️ Activități Seniori & Lideri Adulți</h3>
-            <p style="font-size: 0.95rem; color: var(--slate-600); margin: 0;">Mentorat educațional, management strategic, securitate Safe from Harm și formare</p>
-          </div>
-          <div style="font-size: 2.2rem; background: var(--purple-100); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-            🤝
-          </div>
-        </div>
-
-        <p style="font-size: 1rem; color: var(--slate-700); line-height: 1.65; margin-bottom: 1.25rem;">
-          Seniorii și liderii adulți asigură cadrul educațional și siguranța întregului centru local prin activități de mentorat, logistică și dezvoltare comunitară:
-        </p>
-
-        <div class="branch-activities-grid">
-          <div class="branch-activity-item">
-            <h4 style="color: var(--purple-800);">🤝 Mentorat pentru Patrule & Unități</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Ghidarea pedagogică a copiilor și tinerilor, facilitarea învățării prin acțiune și supravegherea metodică a progresului personal.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--purple-800);">📋 Management Strategic & Campuri</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Planificarea și coordonarea campurilor anuale de vară și iarnă, autorizări de trasee, logistică de echipament și bugete.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--purple-800);">🛡️ Implementarea Safe from Harm</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Asigurarea unui spațiu fizic și emoțional complet protejat pentru toți copiii, conform celor mai riguroase standarde internaționale WOSM.</p>
-          </div>
-          <div class="branch-activity-item">
-            <h4 style="color: var(--purple-800);">🏅 Formare Continuă & Stagii Woodbadge</h4>
-            <p style="font-size: 0.9rem; color: var(--slate-600); margin: 0;">Participare la cursurile naționale și internaționale de lideri, management de voluntari, prim ajutor avansat și pedagogie scout.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Sistemul de Progres Personal (SPICES) Detaliat -->
-  <section id="progres-spices" class="section" style="background-color: var(--slate-100);">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag purple">Educație Integrală</span>
-        <h2 class="section-title">Sistemul de Progres Personal: Cele 6 Arii (SPICES)</h2>
-        <p class="section-desc">
-          În mișcarea cercetășească, creșterea nu se măsoară prin note, ci prin dezvoltarea armonioasă a celor 6 dimensiuni ale personalității umane:
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem;">
-        
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-sm); border-top: 4px solid #f59e0b;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏃‍♂️</div>
-          <h3 style="font-size: 1.25rem; color: var(--slate-900); margin-bottom: 0.4rem;">1. Aria Fizică (Physical)</h3>
-          <p style="font-size: 0.9rem; color: var(--slate-600); line-height: 1.6;">
-            Dezvoltarea sănătății corporale, rezistenței la efort, abilităților motrice și dexterității practice prin mișcare în natură, drumeții și activități outdoor.
-          </p>
-        </div>
-
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-sm); border-top: 4px solid #3b82f6;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
-          <h3 style="font-size: 1.25rem; color: var(--slate-900); margin-bottom: 0.4rem;">2. Aria Intelectuală (Intellectual)</h3>
-          <p style="font-size: 0.9rem; color: var(--slate-600); line-height: 1.6;">
-            Curiozitate, gândire critică, orientare pe hartă, adaptabilitate, creativitate și capacitatea de a găsi soluții ingenioase la provocări neașteptate.
-          </p>
-        </div>
-
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 1.75rem; box-shadow: var(--shadow-sm); border-top: 4px solid #10b981;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🤝</div>
-          <h3 style="font-size: 1.25rem; color: var(--slate-900); margin-bottom: 0.4rem;">3. Aria Socială (Social)</h3>
-          <p style="font-size: 0.9rem; color: var(--slate-600); line-height: 1.6;">
-            Cooperare în patrulă, comunicare asertivă, empatie, respectarea diversității, leadership și implicare activă în viața comunității sucevene.
-          </p>
         </div>
       </article>
     </div>
