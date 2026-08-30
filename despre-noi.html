@@ -28,7 +28,7 @@
           <li><a href="index.html" class="nav-link">Acasă</a></li>
           
           <li class="nav-dropdown-wrapper">
-            <a href="despre-noi.html" class="nav-link active">
+            <a href="#" class="nav-link active">
               Despre Noi <span class="dropdown-caret">▾</span>
             </a>
             <ul class="dropdown-menu">
@@ -39,7 +39,7 @@
           </li>
 
           <li class="nav-dropdown-wrapper">
-            <a href="ce-este-cercetasia.html" class="nav-link">
+            <a href="#" class="nav-link">
               Ce este Cercetășia? <span class="dropdown-caret">▾</span>
             </a>
             <ul class="dropdown-menu">
@@ -49,19 +49,12 @@
               <li><a href="ce-este-cercetasia.html#adulti">Pentru Adulți</a></li>
             </ul>
           </li>
-          <li class="nav-dropdown-wrapper">
-            <a href="ramuri-de-varsta.html" class="nav-link">
-              Ramuri de Vârstă <span class="dropdown-caret">▾</span>
+            <a href="#" class="nav-link">
+              Ramuri de Vârstă
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="ramuri-de-varsta.html#lupisori">Lupișori (7–10 ani)</a></li>
-              <li><a href="ramuri-de-varsta.html#temerari">Temerari (11–14 ani)</a></li>
-              <li><a href="ramuri-de-varsta.html#exploratori">Exploratori (15–18 ani)</a></li>
-              <li><a href="ramuri-de-varsta.html#seniori">Seniori (19–24 ani)</a></li>
-            </ul>
           </li>
           <li class="nav-dropdown-wrapper">
-            <a href="activitati.html" class="nav-link">
+            <a href="#" class="nav-link">
               Activități <span class="dropdown-caret">▾</span>
             </a>
             <ul class="dropdown-menu">
@@ -97,10 +90,7 @@
         <span>/</span>
         <span>Despre Noi</span>
       </div>
-      <h1 class="page-header-title">Despre Noi</h1>
-      <p class="page-header-subtitle">
-        Cine suntem, istoria care ne definește și oamenii dedicați din spatele Centrului Local „Ținutul Fagilor” Suceava.
-      </p>
+      <h1 class="page-header-title"> Centrul Local „Ținutul Fagilor” Suceava
     </div>
   </header>
 
@@ -119,7 +109,6 @@
   <section id="cine-suntem" class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">1. Identitate & Misiune</span>
         <h2 class="section-title">Cine suntem?</h2>
         <p class="section-desc">
           Scurtă descriere a Centrului Local „Ținutul Fagilor” Suceava
@@ -170,141 +159,322 @@
     </div>
   </section>
 
-  <!-- Section 2: Istoricul cercetășiei (pe scurt) -->
-  <section id="istoric-scurt" class="section" style="background-color: var(--slate-100);">
+   <!-- Local History Section: Centrul Local „Ținutul Fagilor” Suceava -->
+  <section class="section section-alt" id="istoric-suceava">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag purple">2. Rădăcini & Tradiție</span>
-        <h2 class="section-title">Istoricul Cercetășiei (pe scurt)</h2>
+        <h2 class="section-title">Istoria Centrului Local „Ținutul Fagilor” Suceava</h2>
         <p class="section-desc">
-          De la primele corturi ridicate pe insula Brownsea în 1907, la recunoașterea națională din 1912 și fondarea centrului din Suceava în 1992.
+          Povestea aventurilor noastre se sprijină pe fundația pusă în urmă cu trei decenii. De la primele focuri de tabără din anii ’90 și până la marile proiecte comunitare din prezent, Centrul Local din Suceava a fost mereu un spațiu al prieteniei, învățării active și dăruirii.
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 2.5rem;">
-        
-        <!-- Cercetășia în Lume -->
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); border-top: 5px solid var(--purple-700);">
-          <span class="section-tag purple">Mondial • Din 1907</span>
-          <h3 style="font-size: 1.4rem; color: var(--purple-900); margin: 0.5rem 0 1rem;">Cercetășia în Lume</h3>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Fondată la începutul secolului XX de către <strong>Lord Robert Baden-Powell</strong>:
-          </p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--slate-700);">
-            <li><strong>1907:</strong> Primul camp pe Insula Brownsea (Anglia) cu 20 de băieți.</li>
-            <li><strong>1908:</strong> Publicarea cărții <em>„Scouting for Boys”</em>.</li>
-            <li><strong>1920:</strong> Prima Jamboree Mondială la Londra (8.000 de cercetași din 34 de țări).</li>
-            <li><strong>Astăzi:</strong> Peste 60 de milioane de membri în 176 de țări.</li>
-          </ul>
+      <!-- Timeline Filter Buttons -->
+      <div class="timeline-filter-bar">
+        <button type="button" class="filter-btn active" data-period="all">Toate Evenimentele</button>
+        <button type="button" class="filter-btn" data-period="1992-1997">1992 – 1997: Începuturile</button>
+        <button type="button" class="filter-btn" data-period="1998-2010">1998 – 2010: Extinderea</button>
+        <button type="button" class="filter-btn" data-period="2011-2016">2011 – 2016: Consolidarea</button>
+        <button type="button" class="filter-btn" data-period="2017-2020">2017 – 2020+: Reziliență</button>
+      </div>
+
+      <!-- Timeline List -->
+      <div class="timeline-wrapper">
+
+        <!-- 1992 -->
+        <div class="timeline-item" data-era="1992-1997">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">13 Februarie 1992</span>
+            </div>
+            <h3 class="timeline-title">Fondarea Centrului Local Suceava</h3>
+            <div class="timeline-desc">
+              Sub conducerea primului președinte, <strong>Florin Senciuc</strong>, cercetășia își începe oficial drumul în Suceava. Peste <strong>70 de tineri entuziaști</strong> s-au alăturat ideii de scoutism, organizați pe ramuri de vârstă: Boboci (8–11 ani), Temerari (12–15 ani), Exploratori (16–18 ani) și Seniori (19–21 ani). Activitățile au îmbinat instruirea teoretică și practică (metoda SCOUT) cu sprijinirea comunității locale — prin vizite de ajutorare la Azilul de Bătrâni din Suceava și acțiuni de ecologizare în Parcul Dendrologic Șipot.
+            </div>
+          </div>
         </div>
 
-        <!-- Cercetășia în România -->
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); border-top: 5px solid var(--blue-700);">
-          <span class="section-tag">Național • Din 1912</span>
-          <h3 style="font-size: 1.4rem; color: var(--blue-900); margin: 0.5rem 0 1rem;">Cercetășia în România</h3>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Apusă de profesorul <strong>Gheorghe Murgoci</strong> după o vizită în Anglia:
-          </p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--slate-700);">
-            <li><strong>1912:</strong> Primele patrule la Blaj, București și Brașov.</li>
-            <li><strong>1914:</strong> Formarea oficială a Asociației sub patronajul Principelui Carol.</li>
-            <li><strong>1922:</strong> România devine membră fondatoare a OMMS.</li>
-            <li><strong>1993:</strong> Înființarea Organizației Naționale „Cercetașii României” (ONCR).</li>
-          </ul>
-        </div>
-
-        <!-- Centrul Local Suceava -->
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm); border-top: 5px solid var(--gold-600);">
-          <span class="section-tag amber">Suceava • Din 1992</span>
-          <h3 style="font-size: 1.4rem; color: var(--gold-700); margin: 0.5rem 0 1rem;">CL „Ținutul Fagilor”</h3>
-          <p style="font-size: 0.95rem; color: var(--slate-600); margin-bottom: 1rem;">
-            Peste trei decenii de continuitate și implicare neîntreruptă:
-          </p>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.9rem; color: var(--slate-700);">
-            <li><strong>13 Februarie 1992:</strong> Fondarea oficială cu președintele Florin Senciuc.</li>
-            <li><strong>1994 - 1997:</strong> Campurile Naționale Voroneț și Zamoștea.</li>
-            <li><strong>2008:</strong> Locul I pe țară la Lupișori (Tecuci) și sprijin inundații.</li>
-            <li><strong>2015 - Prezent:</strong> Festivalul Luminii, Ordinul Cadoului Fermecat, Lumina Păcii.</li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div style="text-align: center;">
-        <a href="istoric.html" class="btn btn-primary">Citește Istoricul Complet & Cronologia Pe Ani →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Echipa & Consiliul Director -->
-  <section id="echipa-cd" class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">3. Oameni & Leadership</span>
-        <h2 class="section-title">Echipa & Consiliul Director</h2>
-        <p class="section-desc">
-          Echipa de conducere (Consiliul Director) și voluntarii adulți care ghidează Centrul Local „Ținutul Fagilor” Suceava.
-        </p>
-      </div>
-
-      <!-- Consiliul Director Grid -->
-      <div style="margin-bottom: 2.5rem;">
-        <h3 style="font-size: 1.5rem; color: var(--slate-900); margin-bottom: 1.5rem; text-align: center;">Membrii Consiliului Director (CD)</h3>
-        
-        <div class="council-grid">
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Șef Centru Local</span>
-            <h4 class="council-name">Fărtăiș Dorina</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Reprezentare legală, coordonarea generală a viziunii centrului și relații instituționale.</p>
-          </div>
-
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Secretar & Resurse Umane</span>
-            <h4 class="council-name">Manolache Mihaela</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Gestiunea evidenței membrilor, secretariat administrativ și integrarea noilor voluntari adulți.</p>
-          </div>
-
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Resp. Programe & Formare</span>
-            <h4 class="council-name">Araujo Maria</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Calitatea pedagogică a activităților pe ramuri de vârstă și stagiile de formare a liderilor.</p>
-          </div>
-
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Resp. Dezvoltare</span>
-            <h4 class="council-name">Pelinari Ecaterina</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Parteneriate comunitare, vizibilitate, campanii de atragere de noi membri și extindere.</p>
-          </div>
-
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Resp. Financiar</span>
-            <h4 class="council-name">Scolobiuc Liliana</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Bugetare, evidență financiar-contabilă a cotizațiilor și gestionarea transparentă a fondurilor.</p>
-          </div>
-
-          <div class="council-card">
-            <span class="council-card-emblem" aria-hidden="true">⚜️</span>
-            <span class="council-role">Comisia de Cenzori</span>
-            <h4 class="council-name">Sauciuc Daniela, Amarie Mugurel, Hudughianu Florina Lorica</h4>
-            <p style="font-size: 0.875rem; color: var(--slate-600);">Audit intern, verificarea legalității și conformității financiare și statutare.</p>
+        <!-- 1994 -->
+        <div class="timeline-item" data-era="1992-1997">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">1994</span>
+            </div>
+            <h3 class="timeline-title">Campul Național „Voroneț '94”</h3>
+            <div class="timeline-desc">
+              Suceava găzduiește primul său mare camp național. În jur de 60 de cercetași din diverse centre locale din țară și frați cercetași din Republica Moldova s-au adunat în inima Bucovinei pentru o experiență de neuitat.
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Quick summary of leaders & link to full page -->
-      <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2rem; text-align: center;">
-        <h4 style="font-size: 1.25rem; color: var(--slate-900); margin-bottom: 0.5rem;">Lideri de Unitate & Voluntari pe Ramuri</h4>
-        <p style="color: var(--slate-600); max-width: 700px; margin: 0 auto 1.5rem; font-size: 0.95rem;">
-          Echipa noastră cuprinde lideri și voluntari dedicați pe fiecare ramură: <strong>Lupișori</strong> (7-10 ani), <strong>Temerari</strong> (11-14 ani), <strong>Exploratori</strong> (15-18 ani) și <strong>Voluntari CL</strong>.
-        </p>
-        <a href="echipa.html" class="btn btn-secondary">Vezi Toată Echipa de Lideri și Voluntari →</a>
-      </div>
+        <!-- 1995 -->
+        <div class="timeline-item" data-era="1992-1997">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">1995</span>
+            </div>
+            <h3 class="timeline-title">Școala prieteniei de la Zamoștea</h3>
+            <div class="timeline-desc">
+              În colaborare cu fundația <em>Romanian Challenge Camp</em> și un grup de cercetași britanici, se organizează stagiul de formare <strong>Zamoștea '95</strong>. Această bază a permis transformarea zonei într-un punct de reper pentru viitoarele campuri naționale și internaționale.
+            </div>
+          </div>
+        </div>
 
+        <!-- 1996 -->
+        <div class="timeline-item" data-era="1992-1997">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">1996</span>
+            </div>
+            <h3 class="timeline-title">Internaționalizarea comunității: Zamoștea '96</h3>
+            <div class="timeline-desc">
+              Continuând tradiția, tabăra Zamoștea '96 aduce împreună cercetași din Marea Britanie și Republica Moldova, consolidând punțile culturale create cu un an în urmă.
+            </div>
+          </div>
+        </div>
+
+        <!-- 1997 -->
+        <div class="timeline-item" data-era="1992-1997">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">1997</span>
+            </div>
+            <h3 class="timeline-title">Campul Zamoștea '97 & Oaspeți din Franța</h3>
+            <div class="timeline-desc">
+              Un an plin de energie, marcat de campul Zamoștea '97 (realizat în parteneriat cu Sediul Central ONCR București, cu participare din Olanda, Marea Britanie și Rep. Moldova) și de un camp itinerar organizat special pentru cercetași oaspeți din Franța.
+            </div>
+          </div>
+        </div>
+
+        <!-- 1998 -->
+        <div class="timeline-item" data-era="1998-2010">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">1998</span>
+            </div>
+            <h3 class="timeline-title">Camp Itinerar Montan</h3>
+            <div class="timeline-desc">
+              Participare la un camp itinerar în munți, organizat alături de Centrul Local Câmpulung Moldovenesc și invitați din Germania.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2006 -->
+        <div class="timeline-item" data-era="1998-2010">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2006</span>
+            </div>
+            <h3 class="timeline-title">Lupa Izvoarelor</h3>
+            <div class="timeline-desc">
+              Are loc activitatea tradițională Lupa Izvoarelor, dedicată spiritului de echipă, anduranței și orientării în natură.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2008 -->
+        <div class="timeline-item" data-era="1998-2010">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2008</span>
+            </div>
+            <h3 class="timeline-title">Extindere Județeană, Locul I pe Țară & Solidaritate</h3>
+            <div class="timeline-desc">
+              Comunitatea suceveană ajunge la aproape 100 de membri activi în municipiu, extinși în localitățile Vama și Liteni, punându-se bazele unui centru satelit la Rădăuți sub îndrumarea lui <strong>Vasile Darie</strong>.
+              <ul>
+                <li><strong>Ecologie:</strong> Peste 100 de saci de deșeuri strânși la acțiunile de igienizare și plantare de la Adâncata.</li>
+                <li><strong>Recunoaștere Națională:</strong> La Tabăra Națională de Lupișori de la Tecuci, sucevenii obțin <strong>Locul I pe țară</strong> (orientare, îndemânare, teatru și cântec).</li>
+                <li><strong>Solidaritate:</strong> Sprijin direct pentru sinistrații de la inundațiile din Brodina (pături, hrană, haine, ghiozdane), precum și donații și colinde la Dolhasca și Bogdănești.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2009 -->
+        <div class="timeline-item" data-era="1998-2010">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2009</span>
+            </div>
+            <h3 class="timeline-title">Campul Național „Promisiunea 2009”</h3>
+            <div class="timeline-desc">
+              Participare pe Insula Cercetașului din Tecuci cu o delegație completă de lupișori, temerari și exploratori, conduși de liderul <strong>Sânziana Râșca</strong>.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2010 -->
+        <div class="timeline-item" data-era="1998-2010">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2010</span>
+            </div>
+            <h3 class="timeline-title">Campul Național de Exploratori</h3>
+            <div class="timeline-desc">
+              Exploratorii din Suceava își reprezintă cu mândrie centrul la Campul Național dedicat adolescenților.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2011 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2011</span>
+            </div>
+            <h3 class="timeline-title">Cupa Izvoarelor & Jamboree Lupișori</h3>
+            <div class="timeline-desc">
+              O patrulă de 3 temerari aduce acasă <strong>Locul I la Orientare</strong> la Cupa Izvoarelor. Tot în acest an, lupișorii participă la a V-a ediție a Jamboree-ului național, existând patrule active la <strong>Școala Gimnazială Nr. 8</strong> și <strong>Școala „Ion Creangă”</strong>, sub coordonarea liderilor Sorina, Carmen, Lili și Cătălina Casovschi. Toamna s-a încheiat cu tradiționalul Camp de la Adâncata.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2012 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2012</span>
+            </div>
+            <h3 class="timeline-title">Masa Rotundă la Universitatea „Ștefan cel Mare” Suceava</h3>
+            <div class="timeline-desc">
+              Centrul afirmă rolul educativ al scoutismului pe 21 mai, organizând alături de DPPD din cadrul USV masa rotundă <em>„Cercetășia – o alternativă educațională. Pedagogia SCOUT”</em>, moderată de Sânziana Râșca. De asemenea, participare la Campul Național de Lupi de la Drăguș.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2013 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2013</span>
+            </div>
+            <h3 class="timeline-title">Campul Național CENTAURUL la Mogoșoaia</h3>
+            <div class="timeline-desc">
+              Un grup de cercetași reprezintă Suceava la prima ediție a campului național CENTAURUL desfășurat la Mogoșoaia.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2014 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2014</span>
+            </div>
+            <h3 class="timeline-title">Eveniment la Iulius Mall & Labirinturi la Drăguș</h3>
+            <div class="timeline-desc">
+              Debutul anului cercetășesc pe 3 octombrie este marcat printr-un eveniment interactiv găzduit la Iulius Mall Suceava, aducând jocurile și metoda scout direct în fața comunității. Lupișorii revin la Drăguș și explorează marile labirinturi de porumb.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2015</span>
+            </div>
+            <h3 class="timeline-title">Festivalul Luminii – Ediția a III-a</h3>
+            <div class="timeline-desc">
+              Pe 16 mai, sucevenii organizează a III-a ediție a Festivalului Luminii, mobilizând peste <strong>70 de cercetași</strong> (sub îndrumarea liderilor Carmen Neteolu și Sorina Polocoșer). Peste <strong>2.000 de gulgute</strong> au luminat orașul, alături de ateliere de desen, reciclare creativă, jocuri și activitatea <em>„Întâlnirea oarbă cu o carte”</em>.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="timeline-item" data-era="2011-2016">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2016</span>
+            </div>
+            <h3 class="timeline-title">Festivalul Luminii continuă în Suceava</h3>
+            <div class="timeline-desc">
+              Tradiția Festivalului Luminii continuă să bucure sute de trecători și copii din Suceava, promovând bucuria lucrurilor mărunte.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="timeline-item" data-era="2017-2020">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2017</span>
+            </div>
+            <h3 class="timeline-title">„Ordinul Cadoului Fermecat” & Nocrich</h3>
+            <div class="timeline-desc">
+              Sub conducerea președintelui <strong>Vasile Darie</strong>, pe 6 decembrie se desfășoară campania <em>„Ordinul Cadoului Fermecat”</em>, menită să aducă spiritul sărbătorilor în inimile celor vulnerabili. În paralel, tinerii iau parte la Festivalul Luminii și la Campul de Teme de la Nocrich.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="timeline-item" data-era="2017-2020">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2018</span>
+            </div>
+            <h3 class="timeline-title">Jamboree Național ROJAM 2018 & Capsula Timpului</h3>
+            <div class="timeline-desc">
+              Anul participării la Jamboree-ul Național <strong>ROJAM 2018</strong>, o celebrare masivă a cercetășiei românești, dublată de pregătirea unei capsule a timpului și de desfășurarea noilor ediții ale Festivalului Luminii.
+            </div>
+          </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="timeline-item" data-era="2017-2020">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2019</span>
+            </div>
+            <h3 class="timeline-title">Campul „Hriscoavele din Putna” & „Cercetașii Bucovinei”</h3>
+            <div class="timeline-desc">
+              <ul>
+                <li><strong>Campul de Iarnă „Hriscoavele din Putna”:</strong> Peste 70 de cercetași și voluntari s-au reunit la Școala Gimnazială „Iacob Putneanul” din Putna pentru un camp de iarnă memorabil.</li>
+                <li><strong>Proiectul „Cercetașii Bucovinei”:</strong> O colaborare strânsă cu Institutul Polonez și Comunitatea Poloneză din Bucovina, ce a inclus un camp tematic la Poiana Micului.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="timeline-item" data-era="2017-2020">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta">
+              <span class="timeline-year">2020</span>
+            </div>
+            <h3 class="timeline-title">Reziliență Scout, Camp at Home & Lumina Păcii de la Salzburg</h3>
+            <div class="timeline-desc">
+              În ciuda provocărilor globale din 2020, spiritul cercetășesc nu s-a oprit:
+              <ul>
+                <li><strong>30 Mai:</strong> Prima ediție online a Festivalului Luminii aduce bucurie în casele tuturor.</li>
+                <li><strong>Camp at Home:</strong> Cercetașii suceveni s-au conectat online cu peste <strong>95.000 de frați scout din 68 de țări</strong>.</li>
+                <li><strong>Proiecte & Tradiții:</strong> Activități tematice interactive precum <em>Live Narnia</em> și primirea <em>Luminii Păcii de la Salzburg</em> în luna decembrie.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
