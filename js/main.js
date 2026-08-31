@@ -381,18 +381,83 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Contact / Registration Form submission
+  // Contact / Registration Form & Google Sheets Integration
+  // =========================================================================
+  // INSTRUCȚIUNI GOOGLE SHEETS:
+  // Introduceți URL-ul Web App generat din Google Apps Script în variabila de mai jos:
+  const GOOGLE_SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz1mqo_3gNKIVWXlMaHB0ya_1NiQlac-Btd37bv4Z874PoIcxEkGS74oGqdkyRaokiF/exec'; 
+  // Exemplu: 'https://script.google.com/macros/s/AKfycbx.../exec'
+  // =========================================================================
+
   const registerForm = document.getElementById('scoutRegisterForm');
   const confirmModal = document.getElementById('confirmModal');
   const closeModalBtn = document.getElementById('closeModalBtn');
+  const branchSelect = document.getElementById('branchSelect');
+  const submitBtn = document.getElementById('submitRegisterBtn');
+
+  // Pre-select branch from URL parameter if present (e.g. contact.html?branch=Lupișori)
+  if (branchSelect) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const branchParam = urlParams.get('branch');
+    if (branchParam) {
+      const decodedParam = decodeURIComponent(branchParam).toLowerCase();
+      for (let i = 0; i < branchSelect.options.length; i++) {
+        const optText = branchSelect.options[i].text.toLowerCase();
+        const optVal = branchSelect.options[i].value.toLowerCase();
+        if (optText.includes(decodedParam) || optVal.includes(decodedParam)) {
+          branchSelect.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
 
   if (registerForm && confirmModal) {
-    registerForm.addEventListener('submit', (e) => {
+    registerForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
-      const name = document.getElementById('applicantName')?.value || 'Prieten cercetaș';
-      const branch = document.getElementById('branchSelect')?.value || 'Unitate Cercetășie';
 
+      const name = document.getElementById('applicantName')?.value?.trim() || 'Prieten cercetaș';
+      const age = document.getElementById('applicantAge')?.value?.trim() || '';
+      const branch = branchSelect?.value || 'Unitate Cercetășie';
+      const phone = document.getElementById('applicantPhone')?.value?.trim() || '';
+      const email = document.getElementById('applicantEmail')?.value?.trim() || '';
+      const message = document.getElementById('applicantMessage')?.value?.trim() || '';
+
+      const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Trimite Cererea de Înscriere ➔';
+
+      // Show loading indicator on button
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span>⏳ Se trimite cererea...</span>';
+      }
+
+      const payload = {
+        name: name,
+        age: age,
+        branch: branch,
+        phone: phone,
+        email: email,
+        message: message,
+        submittedAt: new Date().toLocaleString('ro-RO')
+      };
+
+      // Send to Google Sheets if endpoint is provided
+      if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT.trim() !== '') {
+        try {
+          await fetch(GOOGLE_SHEETS_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8'
+            },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          console.warn('Eroare la trimiterea în Google Sheets:', err);
+        }
+      }
+
+      // Update modal and show confirmation
       const modalApplicant = document.getElementById('modalApplicant');
       if (modalApplicant) {
         modalApplicant.textContent = `${name} (${branch})`;
@@ -400,6 +465,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
       confirmModal.classList.add('show');
       registerForm.reset();
+
+      // Reset submit button
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
     });
 
     if (closeModalBtn) {
