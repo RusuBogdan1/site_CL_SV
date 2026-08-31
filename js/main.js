@@ -75,13 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Sticky Header scroll styling
   const header = document.querySelector('.site-header');
   if (header) {
-    window.addEventListener('scroll', () => {
+    const handleHeaderScroll = () => {
       if (window.scrollY > 20) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
-    });
+    };
+    handleHeaderScroll();
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
   }
 
   // General Tabs Functionality
@@ -464,6 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       confirmModal.classList.add('show');
+      document.body.style.overflow = 'hidden';
       registerForm.reset();
 
       // Reset submit button
@@ -473,16 +476,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    const closeModal = () => {
+      confirmModal.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
     if (closeModalBtn) {
-      closeModalBtn.addEventListener('click', () => {
-        confirmModal.classList.remove('show');
-      });
+      closeModalBtn.addEventListener('click', closeModal);
     }
 
     confirmModal.addEventListener('click', (e) => {
       if (e.target === confirmModal) {
-        confirmModal.classList.remove('show');
+        closeModal();
       }
     });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && confirmModal.classList.contains('show')) {
+        closeModal();
+      }
+    });
+  }
+
+  // Setează automat anul curent în footer
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 });
