@@ -146,17 +146,17 @@
           <form id="scoutRegisterForm">
             <div class="form-group">
               <label for="applicantName" class="form-label">Nume și Prenume (participant sau părinte) *</label>
-              <input type="text" id="applicantName" class="form-input" placeholder="Ex: Popescu Andrei" required>
+              <input type="text" id="applicantName" name="applicantName" class="form-input" placeholder="Ex: Popescu Andrei" required>
             </div>
 
             <div class="form-row">
               <div class="form-group">
                 <label for="applicantAge" class="form-label">Vârsta participantului *</label>
-                <input type="number" id="applicantAge" class="form-input" min="6" max="90" placeholder="Ex: 10" required>
+                <input type="number" id="applicantAge" name="applicantAge" class="form-input" min="6" max="90" placeholder="Ex: 10" required>
               </div>
               <div class="form-group">
                 <label for="branchSelect" class="form-label">Ramura de interes *</label>
-                <select id="branchSelect" class="form-select" required>
+                <select id="branchSelect" name="branchSelect" class="form-select" required>
                   <option value="" disabled selected>Alege ramura...</option>
                   <option value="Lupișori (7–10 ani)">🐺 Lupișori (7–10 ani)</option>
                   <option value="Temerari (11–14 ani)">🧭 Temerari (11–14 ani)</option>
@@ -170,20 +170,20 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="applicantPhone" class="form-label">Număr de Telefon *</label>
-                <input type="tel" id="applicantPhone" class="form-input" placeholder="Ex: 0740 123 456" required>
+                <input type="tel" id="applicantPhone" name="applicantPhone" class="form-input" placeholder="Ex: 0740 123 456" required>
               </div>
               <div class="form-group">
                 <label for="applicantEmail" class="form-label">Adresă de Email *</label>
-                <input type="email" id="applicantEmail" class="form-input" placeholder="Ex: contact@email.ro" required>
+                <input type="email" id="applicantEmail" name="applicantEmail" class="form-input" placeholder="Ex: contact@email.ro" required>
               </div>
             </div>
 
             <div class="form-group">
               <label for="applicantMessage" class="form-label">Mesaj sau întrebări suplimentare (opțional)</label>
-              <textarea id="applicantMessage" class="form-textarea" rows="3" placeholder="Mențiuni despre disponibilitate, experiență anterioară sau alte detalii..."></textarea>
+              <textarea id="applicantMessage" name="applicantMessage" class="form-textarea" rows="3" placeholder="Mențiuni despre disponibilitate, experiență anterioară sau alte detalii..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 0.9rem;">
+            <button type="submit" id="submitRegisterBtn" class="btn btn-primary" style="width: 100%; font-size: 1.05rem; padding: 0.9rem;">
               Trimite Cererea de Înscriere ➔
             </button>
             <p style="font-size: 0.75rem; color: var(--slate-500); text-align: center; margin-top: 0.75rem;">
