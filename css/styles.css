@@ -3295,3 +3295,7 @@ img[src*="logo"] {
     font-size: 0.85rem !important;
   }
 }
+
+.alineat {
+  text-indent: 2.5rem;
+}
