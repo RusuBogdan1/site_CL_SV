@@ -157,74 +157,21 @@
     </div>
   </section>
 
-      <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <img src="assets/images/logo.png" alt="Siglă Cercetașii României Suceava" width="48" height="48">
-            <div class="brand-text">
-              <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
-              <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
-            </div>
-          </div>
-          <p class="footer-desc">
-            Organizația Națională „Cercetașii României” - Centrul Local „Ținutul Fagilor” Suceava. Educație non-formală, dezvoltare de caracter și aventură în natură din 1992.
-          </p>
-          <div class="footer-badge-scout">
-            ⚜️ Membru WOSM (World Organization of the Scout Movement)
-          </div>
-        </div>
-
-        <div class="footer-links-col">
-          <h4 class="footer-heading">Despre & Structură</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Acasă</a></li>
-            <li><a href="despre-noi.html">Despre Noi (Cine suntem)</a></li>
-            <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
-            <li><a href="echipa.html">Echipa & Consiliul Director</a></li>
-            <li><a href="ce-este-cercetasia.html">Ce este Cercetășia?</a></li>
-            <li><a href="ramuri-de-varsta.html">Ramuri de Vârstă</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links-col">
-          <h4 class="footer-heading">Activități & Proiecte</h4>
-          <ul class="footer-links">
-            <li><a href="activitati.html">Activități de Centru & Campuri</a></li>
-            <li><a href="activitati.html#evenimente">Evenimente</a></li>
-            <li><a href="proiecte.html">Festivalul Luminii</a></li>
-            <li><a href="proiecte.html#cadou">Ordinul Cadoului Fermecat</a></li>
-            <li><a href="proiecte.html#lumina-pacii">Lumina Păcii</a></li>
-            <li><a href="parteneri.html">Parteneri & Colaboratori</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-links-col">
-          <h4 class="footer-heading">Implicare & Siguranță</h4>
-          <ul class="footer-links">
-            <li><a href="safe-from-harm.html">Politica Safe from Harm</a></li>
-            <li><a href="donatii.html">Donații & Sponsorizări</a></li>
-            <li><a href="donatii.html#formular230">Redirecționează 3.5%</a></li>
-            <li><a href="ce-este-cercetasia.html#parinti">Ghid pentru Părinți</a></li>
-            <li><a href="ce-este-cercetasia.html#adulti">Devino Voluntar Adult</a></li>
-            <li><a href="contact.html">Înscrieri & Contact</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="copyright">
-          © 1992 - 2026 Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
-        </p>
-        <div class="footer-bottom-links">
-          <a href="safe-from-harm.html">Protecția Copilului (Safe from Harm)</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+  <script>
+  // Încărcarea automată a footer-ului
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+      
+      // Setează automat anul curent în elementul cu id="year"
+      const yearEl = document.getElementById('year');
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
 
   <script src="js/main.js"></script>
 </body>
