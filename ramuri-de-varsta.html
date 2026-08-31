@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ramuri de Vârstă - Lupișori, Temerari, Exploratori | CL Suceava</title>
   <meta name="description" content="Descoperă ramurile de vârstă ale Cercetașilor României: Lupișori (7-10 ani), Temerari (11-14 ani), Exploratori (15-18 ani), Seniori și sistemul de progres pe cele 6 arii de dezvoltare.">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -49,10 +50,11 @@
               <li><a href="ce-este-cercetasia.html#adulti">Pentru Adulți</a></li>
             </ul>
           </li>
-          <li class="nav-dropdown-wrapper">
+          <li>
             <a href="ramuri-de-varsta.html" class="nav-link active">
               Ramuri de Vârstă 
             </a>
+          </li>
           <li class="nav-dropdown-wrapper">
             <a href="#" class="nav-link">
               Activități <span class="dropdown-caret">▾</span>
@@ -102,7 +104,7 @@
           <p>Modelul folosit pentru lupişori drept cadru simbolic este <strong>Cartea Junglei</strong> scrisă de Rudyard Kipling.</p>
           <p><strong>Lupișorii</strong> învață să stăpânească noi abilități și încearcă lucruri noi. Se distrează și merg în aventuri. Își fac noi prieteni și sunt curioși de lumea din jurul lor. Vor să-i ajute pe ceilalți și să fie activi în propriile lor comunități. În fiecare săptămână, lupișorii se adună în Haitic pentru a lua parte alături de Mowgli și prietenii lui din Junglă la o mulțime de activități interesante și provocatoare, realizând orice și-au propus și distrându-se mult pe parcurs.</p>
         </div>
-        <a class="branch-photos-button" href="Activitati poze/poze-lupisori.html">Activitati Lupisori&gt;&gt;</a>
+        <a class="branch-photos-button" href="Activitati%20poze/poze-lupisori.html">Activitati Lupisori&gt;&gt;</a>
       </article>
 
       <article id="temerari" class="branch-card-full temerari source-branch-card">
@@ -117,7 +119,7 @@
           <p>Cadrul simbolic al ramurii de vârstă <em>temerari</em> este relieful cu cele 4 forme ale lui: câmpie, podiș, deal, munte.</p>
           <p><strong>Temerarii</strong> pornesc într-o aventură în care explorarea şi descoperirea sunt extrem de importante, cu orizonturi mai largi, care să le permită să-şi exprime noile şi măreţele abilităţi. Nimic nu le face mai multă plăcere la această vârstă decât să descopere noi lucruri şi să fie surprinși de imprevizibil, așa că explorarea diferitelor forme de relief (câmpie, podiș, deal, munte) le oferă spațiul și mediu propice de explorare și dezvoltare.</p>
         </div>
-        <a class="branch-photos-button" href="Activitati poze/activitati-temerari.html">Activități Temerari&gt;&gt;</a>
+        <a class="branch-photos-button" href="Activitati%20poze/activitati-temerari.html">Activități Temerari&gt;&gt;</a>
       </article>
 
       <article id="exploratori" class="branch-card-full exploratori source-branch-card">
@@ -131,7 +133,7 @@
         <div class="branch-copy">
           <p><strong>Exploratorii</strong> sunt tineri cu iniţiativă, doritori de a ajuta, de a participa active în comunitate. Cadrul simbolic este cetatea. Comunitatea reprezentată simbolic prin cetate, este locul unde, pas cu pas, descoperă că trăiesc în chiar interiorul ei, că au de învățat de la tot ce oferă ea şi mai departe vor ajunge să fie activi prin a se implica şi a realiza diferite proiecte astfel încât, atunci când ei vor fi pregătiţi să îşi vadă rezultatele şi să meargă mai departe, să facă acest lucru prin organizarea unui mare eveniment – unul de neuitat pentru ei.</p>
         </div>
-        <a class="branch-photos-button" href="Activitati poze/activitati-exploratori.html">Activități Exploratori&gt;&gt;</a>
+        <a class="branch-photos-button" href="Activitati%20poze/activitati-exploratori.html">Activități Exploratori&gt;&gt;</a>
       </article>
 
       <article id="seniori" class="branch-card-full seniori source-branch-card">
@@ -149,21 +151,75 @@
     </div>
   </section>
 
-  <div id="footer-placeholder"></div>
-  <script>
-  // Încărcarea automată a footer-ului
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-      
-      // Setează automat anul curent în elementul cu id="year"
-      const yearEl = document.getElementById('year');
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-    });
-  </script>
+  <!-- Site Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/logo.png" alt="Siglă Cercetașii României Suceava" width="48" height="48">
+          <div class="brand-text">
+            <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
+            <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          Organizația Națională „Cercetașii României” - Centrul Local „Ținutul Fagilor” Suceava. Educație non-formală, dezvoltare de caracter și aventură în natură din 1992.
+        </p>
+        <div style="margin-top: 0.75rem;">
+          <a href="https://scout.ro/" target="_blank" rel="noopener" style="color: var(--gold-400); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
+            <span>⚜️</span> <span>Site-ul Național ONCR</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Despre & Structură</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Acasă</a></li>
+          <li><a href="despre-noi.html">Despre Noi (Cine suntem)</a></li>
+          <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
+          <li><a href="echipa.html">Echipa & Consiliul Director</a></li>
+          <li><a href="proiecte.html#festivalul-luminii">Festivalul Luminii</a></li>
+          <li><a href="proiecte.html#cadou">Ordinul Cadoului Fermecat</a></li>
+          <li><a href="proiecte.html#lumina-pacii">Lumina Păcii</a></li>
+          <li><a href="parteneri.html">Parteneri & Colaboratori</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Implicare & Siguranță</h4>
+        <ul class="footer-links">
+          <li><a href="safe-from-harm.html">Politica Safe from Harm</a></li>
+          <li><a href="donatii.html">Donații & Sponsorizări</a></li>
+          <li><a href="https://formular230.ro/centrul-local-tinutul-fagilor-suceava-filiala-organizatiei-nationale-cercetasii-romani" target="_blank" rel="noopener">Redirecționează 3.5%</a></li>
+          <li><a href="ce-este-cercetasia.html#parinti">Ghid pentru Părinți</a></li>
+          <li><a href="ce-este-cercetasia.html">Ce este Cercetășia?</a></li>
+          <li><a href="ramuri-de-varsta.html">Ramuri de Vârstă</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-col">
+        <h4 class="footer-heading">Activități & Proiecte</h4>
+        <ul class="footer-links">
+          <li><a href="activitati.html#centru">Activități de Centru & Campuri</a></li>
+          <li><a href="activitati.html#evenimente">Evenimente</a></li>
+          <li><a href="ce-este-cercetasia.html#adulti">Devino Voluntar Adult</a></li>
+          <li><a href="contact.html">Înscrieri & Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; <span id="year">2026</span> Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="https://sfh.scout.ro/" target="_blank" rel="noopener">Platforma Safe from Harm</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <script src="js/main.js"></script>
 </body>
