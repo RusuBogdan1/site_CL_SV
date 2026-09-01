@@ -86,6 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleHeaderScroll, { passive: true });
   }
 
+  // Scroll-to-top button
+  const scrollTopBtn = document.createElement('button');
+  scrollTopBtn.className = 'scroll-top-btn';
+  scrollTopBtn.type = 'button';
+  scrollTopBtn.setAttribute('aria-label', 'Mergi sus');
+  scrollTopBtn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l6 8h-4v6H10v-6H6l6-8z" fill="currentColor"/></svg>';
+  document.body.appendChild(scrollTopBtn);
+
+  const handleScrollTopButton = () => {
+    const threshold = window.innerHeight * 0.55;
+    scrollTopBtn.classList.toggle('visible', window.scrollY > threshold);
+  };
+
+  handleScrollTopButton();
+  window.addEventListener('scroll', handleScrollTopButton, { passive: true });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
   // General Tabs Functionality
   const tabContainers = document.querySelectorAll('.tabs-container');
   tabContainers.forEach(container => {
