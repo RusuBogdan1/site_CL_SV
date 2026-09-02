@@ -1,12 +1,28 @@
 class CustomFooter extends HTMLElement {
   connectedCallback() {
+    const currentYear = new Date().getFullYear();
+    const currentPath = window.location.pathname;
+    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze OCF)\//i.test(currentPath);
+
+    const resolveHref = (href) => {
+      if (!href || href.startsWith('http') || href.startsWith('#')) return href;
+      if (!isNestedPage) return href;
+      return '../' + href.replace(/^\.\//, '').replace(/^\.\.\//, '');
+    };
+
+    const resolveAsset = (src) => {
+      if (!src || src.startsWith('http') || src.startsWith('data:')) return src;
+      if (!isNestedPage) return src;
+      return '../' + src.replace(/^\.\//, '').replace(/^\.\.\//, '');
+    };
+
     this.innerHTML = `
       <footer class="site-footer">
         <div class="container">
           <div class="footer-top">
             <div class="footer-brand">
               <div class="footer-logo">
-                <img src="assets/images/logo.png" alt="Siglă Cercetașii României Suceava" width="48" height="48">
+                <img src="${resolveAsset('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="48" height="48">
                 <div class="brand-text">
                   <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
                   <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
@@ -25,42 +41,41 @@ class CustomFooter extends HTMLElement {
             <div class="footer-links-col">
               <h4 class="footer-heading">Despre & Structură</h4>
               <ul class="footer-links">
-                <li><a href="index.html">Acasă</a></li>
-                <li><a href="despre-noi.html">Despre Noi (Cine suntem)</a></li>
-                <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
-                <li><a href="echipa.html">Echipa & Consiliul Director</a></li>
-                <li><a href="proiecte.html#festivalul-luminii">Festivalul Luminii</a></li>
-                <li><a href="proiecte.html#cadou">Ordinul Cadoului Fermecat</a></li>
-                <li><a href="proiecte.html#lumina-pacii">Lumina Păcii</a></li>
-                <li><a href="parteneri.html">Parteneri & Colaboratori</a></li>
+                <li><a href="${resolveHref('index.html')}">Acasă</a></li>
+                <li><a href="${resolveHref('despre-noi.html')}">Despre Noi (Cine suntem)</a></li>
+                <li><a href="${resolveHref('istoric.html')}">Istoricul Cercetășiei</a></li>
+                <li><a href="${resolveHref('proiecte.html#festivalul-luminii')}">Festivalul Luminii</a></li>
+                <li><a href="${resolveHref('proiecte.html#cadou')}">Ordinul Cadoului Fermecat</a></li>
+                <li><a href="${resolveHref('proiecte.html#lumina-pacii')}">Lumina Păcii</a></li>
+                <li><a href="${resolveHref('parteneri.html')}">Parteneri & Colaboratori</a></li>
               </ul>
             </div>
 
             <div class="footer-links-col">
               <h4 class="footer-heading">Implicare & Siguranță</h4>
               <ul class="footer-links">
-                <li><a href="donatii.html">Donații & Sponsorizări</a></li>
+                <li><a href="${resolveHref('donatii.html')}">Donații & Sponsorizări</a></li>
                 <li><a href="https://formular230.ro/centrul-local-tinutul-fagilor-suceava-filiala-organizatiei-nationale-cercetasii-romani" target="_blank" rel="noopener">Redirecționează 3.5%</a></li>
-                <li><a href="ce-este-cercetasia.html#parinti">Ghid pentru Părinți</a></li>
-                <li><a href="ce-este-cercetasia.html">Ce este Cercetășia?</a></li>
-                <li><a href="ramuri-de-varsta.html">Ramuri de Vârstă</a></li>
+                <li><a href="${resolveHref('ce-este-cercetasia.html#parinti')}">Ghid pentru Părinți</a></li>
+                <li><a href="${resolveHref('ce-este-cercetasia.html')}">Ce este Cercetășia?</a></li>
+                <li><a href="${resolveHref('ramuri-de-varsta.html')}">Ramuri de Vârstă</a></li>
               </ul>
             </div>
 
             <div class="footer-links-col">
               <h4 class="footer-heading">Activități & Proiecte</h4>
               <ul class="footer-links">
-                <li><a href="activitati.html#centru">Activități de Centru & Campuri</a></li>
-                <li><a href="activitati.html#evenimente">Evenimente</a></li>
-                <li><a href="ce-este-cercetasia.html#adulti">Devino Voluntar Adult</a></li>
-                <li><a href="contact.html">Înscrieri & Contact</a></li>
+                <li><a href="${resolveHref('activitati.html#centru')}">Activități de Centru & Campuri</a></li>
+                <li><a href="${resolveHref('activitati.html#evenimente')}">Evenimente</a></li>
+                <li><a href="${resolveHref('ce-este-cercetasia.html#adulti')}">Devino Voluntar Adult</a></li>
+                <li><a href="${resolveHref('contact.html')}">Înscrieri & Contact</a></li>
               </ul>
             </div>
           </div>
 
           <div class="footer-bottom">
             <p class="copyright">
-              &copy; <span>${new Date().getFullYear()}</span> Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
+              &copy; <span>${currentYear}</span> Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
             </p>
             <div class="footer-bottom-links">
               <a href="https://sfh.scout.ro/" target="_blank" rel="noopener">Platforma Safe from Harm</a>
@@ -72,4 +87,6 @@ class CustomFooter extends HTMLElement {
   }
 }
 
-customElements.define('site-footer', CustomFooter);
+if (!customElements.get('site-footer')) {
+  customElements.define('site-footer', CustomFooter);
+}

@@ -1,6 +1,14 @@
 class CustomHeader extends HTMLElement {
   connectedCallback() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentFullPath = decodeURIComponent(window.location.pathname);
+    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze OCF)\//i.test(currentFullPath);
+
+    const resolveLocalHref = (href) => {
+      if (!href || href.startsWith('#') || href.startsWith('http')) return href;
+      if (!isNestedPage) return href;
+      return '../' + href.replace(/^\.\//, '').replace(/^\.\.\//, '');
+    };
 
     const isActive = (href) => {
       const target = href.split('#')[0];
@@ -13,8 +21,8 @@ class CustomHeader extends HTMLElement {
     this.innerHTML = `
       <header class="site-header">
         <div class="container header-inner">
-          <a href="index.html" class="brand-logo" title="Centrul Local Ținutul Fagilor Suceava">
-            <img src="assets/images/logo.png" alt="Siglă Cercetașii României Suceava" width="54" height="54">
+          <a href="${resolveLocalHref('index.html')}" class="brand-logo" title="Centrul Local Ținutul Fagilor Suceava">
+            <img src="${resolveLocalHref('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="54" height="54">
             <div class="brand-text">
               <span class="brand-title">Ținutul Fagilor Suceava</span>
               <span class="brand-subtitle"></span>
@@ -23,33 +31,27 @@ class CustomHeader extends HTMLElement {
 
           <nav class="main-nav">
             <ul class="nav-links" id="navLinks">
-              <li><a href="index.html" class="nav-link ${isActive('index.html') ? 'active' : ''}">Acasă</a></li>
+              <li><a href="${resolveLocalHref('index.html')}" class="nav-link ${isActive('index.html') ? 'active' : ''}">Acasă</a></li>
               
               <li class="nav-dropdown-wrapper">
                 <a href="#" class="nav-link dropdown-toggle">
                   Despre Noi <span class="dropdown-caret">▾</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="despre-noi.html">Cine suntem?</a></li>
-                  <li><a href="istoric.html">Istoricul Cercetășiei</a></li>
-                  <li><a href="echipa.html">Echipa Noastră</a></li>
-                </ul>
-              </li>
-
-              <li class="nav-dropdown-wrapper">
-                <a href="#" class="nav-link dropdown-toggle">
-                  Ce este Cercetășia? <span class="dropdown-caret">▾</span>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a href="ce-este-cercetasia.html#miscare">Ca Mișcare</a></li>
-                  <li><a href="ce-este-cercetasia.html#copii">Pentru Copii</a></li>
-                  <li><a href="ce-este-cercetasia.html#parinti">Pentru Părinți</a></li>
-                  <li><a href="ce-este-cercetasia.html#adulti">Pentru Adulți</a></li>
+                  <li><a href="${resolveLocalHref('despre-noi.html')}">Cine suntem?</a></li>
+                  <li><a href="${resolveLocalHref('istoric.html')}">Istoricul Cercetășiei</a></li>
+                  <li><a href="${resolveLocalHref('contact.html')}">Contact</a></li>
                 </ul>
               </li>
 
               <li>
-                <a href="ramuri-de-varsta.html" class="nav-link ${isActive('ramuri-de-varsta.html') ? 'active' : ''}">
+                <a href="${resolveLocalHref('ce-este-cercetasia.html')}" class="nav-link ${isActive('ce-este-cercetasia.html') ? 'active' : ''}">
+                  Ce este Cercetășia? 
+                </a>
+              </li>
+
+              <li>
+                <a href="${resolveLocalHref('ramuri-de-varsta.html')}" class="nav-link ${isActive('ramuri-de-varsta.html') ? 'active' : ''}">
                   Ramuri de Vârstă 
                 </a>
               </li>
@@ -59,15 +61,16 @@ class CustomHeader extends HTMLElement {
                   Activități <span class="dropdown-caret">▾</span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="activitati.html#centru">Activități de Centru</a></li>
-                  <li><a href="activitati.html#evenimente">Evenimente</a></li>
+                  <li><a href="${resolveLocalHref('activitati.html')}">Activități de Centru</a></li>
+                  <li><a href="${resolveLocalHref('Activitati%20poze/poze-lupisori.html')}">Activități Lupișori</a></li>
+                  <li><a href="${resolveLocalHref('Activitati%20poze/activitati-temerari.html')}">Activități Temerari</a></li>
+                  <li><a href="${resolveLocalHref('Activitati%20poze/activitati-exploratori.html')}">Activități Exploratori</a></li>
                 </ul>
               </li>
 
-              <li><a href="proiecte.html" class="nav-link ${isActive('proiecte.html') ? 'active' : ''}">Proiecte</a></li>
-              <li><a href="parteneri.html" class="nav-link ${isActive('parteneri.html') ? 'active' : ''}">Parteneri</a></li>
-              <li><a href="donatii.html" class="nav-link ${isActive('donatii.html') ? 'active' : ''}">Donații</a></li>
-              <li><a href="contact.html" class="nav-link ${isActive('contact.html') ? 'active' : ''}">Contact</a></li>
+              <li><a href="${resolveLocalHref('proiecte.html')}" class="nav-link ${isActive('proiecte.html') ? 'active' : ''}">Proiecte</a></li>
+              <li><a href="${resolveLocalHref('parteneri.html')}" class="nav-link ${isActive('parteneri.html') ? 'active' : ''}">Parteneri</a></li>
+              <li><a href="${resolveLocalHref('donatii.html')}" class="nav-link ${isActive('donatii.html') ? 'active' : ''}">Donații</a></li>
             </ul>
 
             <button class="nav-toggle" id="navToggle" aria-label="Deschide meniul de navigare" aria-expanded="false">
