@@ -42,8 +42,8 @@ class CustomFooter extends HTMLElement {
                 <li><a href="${resolveHref('despre-noi.html')}">Despre Noi</a></li>
                 <li><a href="${resolveHref('istoric.html')}">Istoricul Cercetășiei</a></li>
                 <li><a href="${resolveHref('ce-este-cercetasia.html')}">Ce este Cercetășia?</a></li>
-                <li><a href="https://www.facebook.com/cercetasisuceava" target="_blank" rel="noopener">Facebook</a></li>
-                <li><a href="https://www.instagram.com/cercetasisuceava" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.facebook.com/cercetasiiromanieisuceava?locale=ro_RO" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.instagram.com/cl_tinutulfagilor_suceava/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
 
