@@ -153,7 +153,111 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  }
 
+  // Collage Filtering & Lightbox System (Ramuri & Activități)
+  const collageFilterBtns = document.querySelectorAll('.collage-filter-bar .filter-btn');
+  const collageCards = document.querySelectorAll('.collage-grid .collage-card');
+
+  if (collageFilterBtns.length > 0 && collageCards.length > 0) {
+    collageFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        collageFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.getAttribute('data-filter');
+
+        collageCards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.style.display = 'flex';
+            card.style.animation = 'fadeIn 0.3s ease';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  // Lightbox Modal Functionality
+  const lightbox = document.getElementById('imageLightbox');
+  if (lightbox && collageCards.length > 0) {
+    const lbImg = lightbox.querySelector('.lightbox-img');
+    const lbTitle = lightbox.querySelector('.lightbox-title');
+    const lbCounter = lightbox.querySelector('.lightbox-counter');
+    const lbClose = lightbox.querySelector('.lightbox-close-btn');
+    const lbPrev = lightbox.querySelector('.lightbox-btn.prev');
+    const lbNext = lightbox.querySelector('.lightbox-btn.next');
+
+    let visibleCards = [];
+    let currentIdx = 0;
+
+    const updateLightbox = () => {
+      if (visibleCards.length === 0) return;
+      const card = visibleCards[currentIdx];
+      const img = card.querySelector('img');
+      const title = card.querySelector('.collage-card-title')?.textContent || '';
+      
+      if (img && lbImg) {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || title;
+      }
+      if (lbTitle) {
+        lbTitle.textContent = title;
+      }
+      if (lbCounter) {
+        lbCounter.textContent = `${currentIdx + 1} / ${visibleCards.length}`;
+      }
+    };
+
+    const openLightbox = (card) => {
+      visibleCards = Array.from(collageCards).filter(c => window.getComputedStyle(c).display !== 'none');
+      currentIdx = visibleCards.indexOf(card);
+      if (currentIdx === -1) currentIdx = 0;
+      updateLightbox();
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    const showPrev = (e) => {
+      if (e) e.stopPropagation();
+      if (visibleCards.length === 0) return;
+      currentIdx = (currentIdx - 1 + visibleCards.length) % visibleCards.length;
+      updateLightbox();
+    };
+
+    const showNext = (e) => {
+      if (e) e.stopPropagation();
+      if (visibleCards.length === 0) return;
+      currentIdx = (currentIdx + 1) % visibleCards.length;
+      updateLightbox();
+    };
+
+    collageCards.forEach(card => {
+      card.addEventListener('click', () => openLightbox(card));
+    });
+
+    if (lbClose) lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+    if (lbPrev) lbPrev.addEventListener('click', showPrev);
+    if (lbNext) lbNext.addEventListener('click', showNext);
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target.classList.contains('lightbox-container')) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
   }
 
   // Activities Filtering
