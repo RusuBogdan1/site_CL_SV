@@ -179,7 +179,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lightbox Modal Functionality
+  // Previzualizare miniaturi la hover pe cardul evenimentului
+  collageCards.forEach(card => {
+    const mainImg = card.querySelector('.collage-img-wrap img');
+    const miniThumbs = card.querySelectorAll('.collage-mini-thumb');
+    const defaultSrc = mainImg ? mainImg.src : '';
+
+    miniThumbs.forEach(thumb => {
+      thumb.addEventListener('mouseenter', () => {
+        if (mainImg) {
+          mainImg.src = thumb.src;
+          miniThumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+        }
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (mainImg && defaultSrc) {
+        mainImg.src = defaultSrc;
+        miniThumbs.forEach((t, i) => {
+          t.classList.toggle('active', i === 0);
+        });
+      }
+    });
+  });
+
+  // Lightbox Modal Functionality (Enhanced for Event Albums & Single Photos)
   const lightbox = document.getElementById('imageLightbox');
   if (lightbox && collageCards.length > 0) {
     const lbImg = lightbox.querySelector('.lightbox-img');
@@ -188,33 +214,106 @@ document.addEventListener('DOMContentLoaded', () => {
     const lbClose = lightbox.querySelector('.lightbox-close-btn');
     const lbPrev = lightbox.querySelector('.lightbox-btn.prev');
     const lbNext = lightbox.querySelector('.lightbox-btn.next');
+    let lbThumbsBox = lightbox.querySelector('.lightbox-thumbnails');
+
+    if (!lbThumbsBox) {
+      lbThumbsBox = document.createElement('div');
+      lbThumbsBox.className = 'lightbox-thumbnails';
+      const container = lightbox.querySelector('.lightbox-container');
+      if (container) container.appendChild(lbThumbsBox);
+    }
+
+    let isAlbumMode = false;
+    let albumPhotos = []; // array of { src, alt }
+    let albumTitle = '';
+    let albumDate = '';
+    let currentPhotoIdx = 0;
 
     let visibleCards = [];
-    let currentIdx = 0;
+    let currentCardIdx = 0;
 
-    const updateLightbox = () => {
-      if (visibleCards.length === 0) return;
-      const card = visibleCards[currentIdx];
-      const img = card.querySelector('img');
-      const title = card.querySelector('.collage-card-title')?.textContent || '';
-      
-      if (img && lbImg) {
-        lbImg.src = img.src;
-        lbImg.alt = img.alt || title;
-      }
-      if (lbTitle) {
-        lbTitle.textContent = title;
-      }
-      if (lbCounter) {
-        lbCounter.textContent = `${currentIdx + 1} / ${visibleCards.length}`;
+    const renderLightboxView = () => {
+      if (isAlbumMode) {
+        if (albumPhotos.length === 0) return;
+        const photo = albumPhotos[currentPhotoIdx];
+        if (lbImg) {
+          lbImg.src = photo.src;
+          lbImg.alt = photo.alt || albumTitle;
+        }
+        if (lbTitle) {
+          lbTitle.textContent = albumTitle;
+        }
+        if (lbCounter) {
+          lbCounter.textContent = `${currentPhotoIdx + 1} / ${albumPhotos.length}${albumDate ? ' • ' + albumDate : ''}`;
+        }
+
+        // Render thumbnails in lightbox
+        if (lbThumbsBox) {
+          if (albumPhotos.length > 1) {
+            lbThumbsBox.style.display = 'flex';
+            lbThumbsBox.innerHTML = '';
+            albumPhotos.forEach((p, idx) => {
+              const thumbImg = document.createElement('img');
+              thumbImg.className = `lightbox-thumb ${idx === currentPhotoIdx ? 'active' : ''}`;
+              thumbImg.src = p.src;
+              thumbImg.alt = `Miniatură ${idx + 1}`;
+              thumbImg.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentPhotoIdx = idx;
+                renderLightboxView();
+              });
+              lbThumbsBox.appendChild(thumbImg);
+            });
+          } else {
+            lbThumbsBox.style.display = 'none';
+            lbThumbsBox.innerHTML = '';
+          }
+        }
+      } else {
+        // Standard card-by-card mode (for single photo per card pages)
+        if (visibleCards.length === 0) return;
+        const card = visibleCards[currentCardIdx];
+        const img = card.querySelector('img');
+        const title = card.querySelector('.collage-card-title')?.textContent || '';
+        
+        if (img && lbImg) {
+          lbImg.src = img.src;
+          lbImg.alt = img.alt || title;
+        }
+        if (lbTitle) {
+          lbTitle.textContent = title;
+        }
+        if (lbCounter) {
+          lbCounter.textContent = `${currentCardIdx + 1} / ${visibleCards.length}`;
+        }
+        if (lbThumbsBox) {
+          lbThumbsBox.style.display = 'none';
+          lbThumbsBox.innerHTML = '';
+        }
       }
     };
 
-    const openLightbox = (card) => {
-      visibleCards = Array.from(collageCards).filter(c => window.getComputedStyle(c).display !== 'none');
-      currentIdx = visibleCards.indexOf(card);
-      if (currentIdx === -1) currentIdx = 0;
-      updateLightbox();
+    const openLightbox = (card, targetIdx = 0) => {
+      const albumContainer = card.querySelector('.collage-album-photos');
+      const albumImgElements = albumContainer ? albumContainer.querySelectorAll('img') : null;
+
+      if (albumImgElements && albumImgElements.length > 0) {
+        isAlbumMode = true;
+        albumTitle = card.querySelector('.collage-card-title')?.textContent || '';
+        albumDate = card.querySelector('.collage-date-tag')?.textContent || '';
+        albumPhotos = Array.from(albumImgElements).map(img => ({
+          src: img.src,
+          alt: img.alt || albumTitle
+        }));
+        currentPhotoIdx = (targetIdx >= 0 && targetIdx < albumPhotos.length) ? targetIdx : 0;
+      } else {
+        isAlbumMode = false;
+        visibleCards = Array.from(collageCards).filter(c => window.getComputedStyle(c).display !== 'none');
+        currentCardIdx = visibleCards.indexOf(card);
+        if (currentCardIdx === -1) currentCardIdx = 0;
+      }
+
+      renderLightboxView();
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     };
@@ -226,20 +325,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const showPrev = (e) => {
       if (e) e.stopPropagation();
-      if (visibleCards.length === 0) return;
-      currentIdx = (currentIdx - 1 + visibleCards.length) % visibleCards.length;
-      updateLightbox();
+      if (isAlbumMode) {
+        if (albumPhotos.length === 0) return;
+        currentPhotoIdx = (currentPhotoIdx - 1 + albumPhotos.length) % albumPhotos.length;
+        renderLightboxView();
+      } else {
+        if (visibleCards.length === 0) return;
+        currentCardIdx = (currentCardIdx - 1 + visibleCards.length) % visibleCards.length;
+        renderLightboxView();
+      }
     };
 
     const showNext = (e) => {
       if (e) e.stopPropagation();
-      if (visibleCards.length === 0) return;
-      currentIdx = (currentIdx + 1) % visibleCards.length;
-      updateLightbox();
+      if (isAlbumMode) {
+        if (albumPhotos.length === 0) return;
+        currentPhotoIdx = (currentPhotoIdx + 1) % albumPhotos.length;
+        renderLightboxView();
+      } else {
+        if (visibleCards.length === 0) return;
+        currentCardIdx = (currentCardIdx + 1) % visibleCards.length;
+        renderLightboxView();
+      }
     };
 
     collageCards.forEach(card => {
-      card.addEventListener('click', () => openLightbox(card));
+      card.addEventListener('click', (e) => {
+        // Check if a specific mini thumbnail was clicked
+        const clickedMini = e.target.closest('.collage-mini-thumb, .collage-mini-more');
+        let initialIdx = 0;
+        if (clickedMini && clickedMini.getAttribute('data-idx')) {
+          initialIdx = parseInt(clickedMini.getAttribute('data-idx'), 10) || 0;
+        }
+        openLightbox(card, initialIdx);
+      });
     });
 
     if (lbClose) lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
