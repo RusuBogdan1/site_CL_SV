@@ -527,7 +527,7 @@ ul, ol {
   font-weight: 800;
   color: var(--white);
   line-height: 1.15;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
   letter-spacing: -0.02em;
 }
 
@@ -843,37 +843,10 @@ ul, ol {
   line-height: 1.6;
 }
 
-#miscare p,
-#copii p,
-#parinti p,
-#adulti p {
-  text-indent: 2em;
-}
-
-.adult-program-table td:not(.adult-program-icon),
-.sfh-banner p,
-.sfh-pillar-card p,
-.sfh-alert-box p {
-  text-indent: 2em;
-}
-
-.donations-section .section-header p,
-.donations-section .donation-grid p {
-  text-indent: 2em;
-}
-
-.activities-section p {
-  text-indent: 2em;
-}
-
 .activities-section-subtitle {
   margin: 0 0 2rem;
   text-align: center;
   color: var(--blue-900);
-}
-
-.projects-section p {
-  text-indent: 2em;
 }
 
 /* ==========================================================================
@@ -2132,6 +2105,17 @@ ul, ol {
   font-size: 0.95rem;
 }
 
+.contact-detail-text a {
+  color: var(--white);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-detail-text a:hover {
+  color: var(--gold-400);
+  text-decoration: underline;
+}
+
 .form-box {
   background: var(--white);
   padding: 2.5rem;
@@ -2581,9 +2565,7 @@ ul, ol {
   margin-top: 1.25rem;
 }
 
-.branch-copy p {
-  text-indent: 2em;
-}
+
 
 .branch-photos-button {
   display: block;
@@ -2644,6 +2626,7 @@ ul, ol {
   display: flex;
   flex-direction: column;
 }
+
 
 .activity-card:hover {
   transform: translateY(-4px);
@@ -3372,9 +3355,7 @@ img[src*="logo"] {
   }
 }
 
-.alineat {
-  text-indent: 2.5rem;
-}
+
 
 /* ==========================================================================
    Section Subtitle
@@ -3534,5 +3515,426 @@ img[src*="logo"] {
     right: 1rem;
     bottom: 1.5rem;
     justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Photo Collage & Lightbox System (Ramuri de Vârstă & Activități)
+   ========================================================================== */
+.collage-section {
+  padding: 3rem 0 5rem;
+  background: var(--bg-page);
+}
+
+.yellow-message-box,
+.collage-intro-card {
+  background: #fffdf2;
+  border: 2px solid var(--gold-400);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 2rem;
+  margin-bottom: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.yellow-message-box p,
+.collage-intro-card p {
+  color: var(--slate-800);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 700;
+}
+
+.blue-message-box {
+  background: #eff6ff;
+  border: 2px solid var(--blue-500);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 2rem;
+  margin-bottom: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.blue-message-box p {
+  color: var(--blue-950);
+  font-size: 1.12rem;
+  line-height: 1.65;
+  margin: 0;
+  font-weight: 700;
+}
+
+.collage-intro-text h2 {
+  font-size: 1.45rem;
+  color: var(--slate-900);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.collage-intro-text p {
+  color: var(--slate-600);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 750px;
+}
+
+.collage-stats-pill {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.collage-stat-item {
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  color: var(--blue-900);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.collage-stat-item.gold {
+  background: var(--gold-50);
+  border-color: #fde68a;
+  color: var(--gold-700);
+}
+
+.collage-filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.collage-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+}
+
+.collage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.15), 0 0 0 2px var(--gold-400);
+  border-color: var(--gold-400);
+}
+
+.collage-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background: var(--slate-900);
+}
+
+.collage-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.collage-card:hover .collage-img-wrap img {
+  transform: scale(1.08);
+}
+
+.collage-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 23, 57, 0.75) 0%, rgba(7, 23, 57, 0.2) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+.collage-card:hover .collage-img-overlay {
+  opacity: 1;
+}
+
+.collage-zoom-icon {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--slate-900);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.collage-card:hover .collage-zoom-icon {
+  transform: scale(1);
+}
+
+.collage-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.collage-badge.camp {
+  background: rgba(254, 243, 199, 0.95);
+  color: #78350f;
+  border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+.collage-badge.activitate {
+  background: rgba(219, 234, 254, 0.95);
+  color: #1e3a8a;
+  border: 1px solid rgba(37, 99, 235, 0.3);
+}
+
+.collage-badge.via {
+  background: rgba(220, 252, 231, 0.95);
+  color: #166534;
+  border: 1px solid rgba(22, 101, 52, 0.3);
+}
+
+.collage-date-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--gold-400);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.collage-card-body {
+  padding: 1.35rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: var(--white);
+}
+
+.collage-card-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--slate-900);
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+  font-family: var(--font-heading);
+  transition: color 0.2s ease;
+}
+
+.collage-card:hover .collage-card-title {
+  color: var(--blue-700);
+}
+
+.collage-card-sub {
+  font-size: 0.875rem;
+  color: var(--slate-500);
+  line-height: 1.45;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 23, 57, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-container {
+  position: relative;
+  max-width: 1100px;
+  max-height: 92vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img-box {
+  position: relative;
+  max-width: 100%;
+  max-height: 76vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-img-box img {
+  max-width: 100%;
+  max-height: 76vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  animation: lightboxFade 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes lightboxFade {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.lightbox-caption-bar {
+  margin-top: 1.25rem;
+  text-align: center;
+  color: var(--white);
+  width: 100%;
+  max-width: 850px;
+}
+
+.lightbox-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-400);
+  margin-bottom: 0.35rem;
+  font-family: var(--font-heading);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-counter {
+  font-size: 0.85rem;
+  color: var(--slate-300);
+  font-weight: 500;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.lightbox-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-btn.prev {
+  left: -4.5rem;
+}
+
+.lightbox-btn.next {
+  right: -4.5rem;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -3.5rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-close-btn:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .lightbox-btn.prev { left: 0.5rem; }
+  .lightbox-btn.next { right: 0.5rem; }
+  .lightbox-close-btn { top: 0.5rem; right: 0.5rem; }
+}
+
+@media (max-width: 640px) {
+  .collage-grid {
+    grid-template-columns: 1fr;
+  }
+  .collage-img-wrap {
+    height: 220px;
   }
 }

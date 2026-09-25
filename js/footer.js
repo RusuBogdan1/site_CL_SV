@@ -28,9 +28,6 @@ class CustomFooter extends HTMLElement {
                   <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
                 </div>
               </div>
-              <p class="footer-desc">
-                Organizația Națională „Cercetașii României” - Centrul Local „Ținutul Fagilor” Suceava. Educație non-formală, dezvoltare de caracter și aventură în natură din 1992.
-              </p>
               <div style="margin-top: 0.75rem;">
                 <a href="https://scout.ro/" target="_blank" rel="noopener" style="color: var(--gold-400); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
                   <span>⚜️</span> <span>Site-ul Național ONCR</span>
@@ -39,36 +36,34 @@ class CustomFooter extends HTMLElement {
             </div>
 
             <div class="footer-links-col">
-              <h4 class="footer-heading">Despre & Structură</h4>
+              <h4 class="footer-heading">Despre Noi</h4>
               <ul class="footer-links">
                 <li><a href="${resolveHref('index.html')}">Acasă</a></li>
-                <li><a href="${resolveHref('despre-noi.html')}">Despre Noi (Cine suntem)</a></li>
+                <li><a href="${resolveHref('despre-noi.html')}">Despre Noi</a></li>
                 <li><a href="${resolveHref('istoric.html')}">Istoricul Cercetășiei</a></li>
-                <li><a href="${resolveHref('proiecte.html#festivalul-luminii')}">Festivalul Luminii</a></li>
-                <li><a href="${resolveHref('proiecte.html#cadou')}">Ordinul Cadoului Fermecat</a></li>
-                <li><a href="${resolveHref('proiecte.html#lumina-pacii')}">Lumina Păcii</a></li>
-                <li><a href="${resolveHref('parteneri.html')}">Parteneri & Colaboratori</a></li>
+                <li><a href="${resolveHref('ce-este-cercetasia.html')}">Ce este Cercetășia?</a></li>
+                <li><a href="https://www.facebook.com/cercetasiiromanieisuceava?locale=ro_RO" target="_blank" rel="noopener">Facebook</a></li>
+                <li><a href="https://www.instagram.com/cl_tinutulfagilor_suceava/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
             </div>
 
             <div class="footer-links-col">
-              <h4 class="footer-heading">Implicare & Siguranță</h4>
+              <h4 class="footer-heading">Susține Cercetășia</h4>
               <ul class="footer-links">
                 <li><a href="${resolveHref('donatii.html')}">Donații & Sponsorizări</a></li>
                 <li><a href="https://formular230.ro/centrul-local-tinutul-fagilor-suceava-filiala-organizatiei-nationale-cercetasii-romani" target="_blank" rel="noopener">Redirecționează 3.5%</a></li>
-                <li><a href="${resolveHref('ce-este-cercetasia.html#parinti')}">Ghid pentru Părinți</a></li>
-                <li><a href="${resolveHref('ce-este-cercetasia.html')}">Ce este Cercetășia?</a></li>
-                <li><a href="${resolveHref('ramuri-de-varsta.html')}">Ramuri de Vârstă</a></li>
+                <li><a href="${resolveHref('parteneri.html')}">Parteneri & Colaboratori</a></li>
               </ul>
             </div>
 
             <div class="footer-links-col">
               <h4 class="footer-heading">Activități & Proiecte</h4>
               <ul class="footer-links">
-                <li><a href="${resolveHref('activitati.html#centru')}">Activități de Centru & Campuri</a></li>
-                <li><a href="${resolveHref('activitati.html#evenimente')}">Evenimente</a></li>
-                <li><a href="${resolveHref('ce-este-cercetasia.html#adulti')}">Devino Voluntar Adult</a></li>
-                <li><a href="${resolveHref('contact.html')}">Înscrieri & Contact</a></li>
+                <li><a href="${resolveHref('activitati.html')}">Activități de Centru</a></li>
+                <li><a href="${resolveHref('ramuri-de-varsta.html')}">Ramuri de Vârstă</a></li>
+                <li><a href="${resolveHref('proiecte.html#festivalul-luminii')}">Festivalul Luminii</a></li>
+                <li><a href="${resolveHref('proiecte.html#cadou')}">Ordinul Cadoului Fermecat</a></li>
+                <li><a href="${resolveHref('proiecte.html#lumina-pacii')}">Lumina Păcii</a></li>
               </ul>
             </div>
           </div>
