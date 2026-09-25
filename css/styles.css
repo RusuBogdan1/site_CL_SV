@@ -2607,6 +2607,30 @@ ul, ol {
   color: #064e3b;
 }
 
+.activity-photos-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: fit-content;
+  margin: 1.25rem 0 0 auto;
+  padding: 0.65rem 1.15rem;
+  background: rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  color: var(--blue-950);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.activity-photos-button:hover {
+  background: rgba(96, 165, 250, 0.85);
+  color: var(--blue-950);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
 /* ==========================================================================
    Activities & Projects Extended Styles
    ========================================================================== */

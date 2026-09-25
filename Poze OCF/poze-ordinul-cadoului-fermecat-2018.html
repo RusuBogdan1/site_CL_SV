@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Poze ORDINUL CADOULUI FERMECAT 2018, ediția a III-a - Centrul Local „Ținutul Fagilor” Suceava</title>
+  <meta name="description" content="Album foto Ordinul Cadoului Fermecat 2018, ediția a III-a - Centrul Local „Ținutul Fagilor” Suceava.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -36,11 +37,57 @@
         <div class="header-spacer" aria-hidden="true"></div>
       </div>
 
-      <h1 class="page-header-title">Poze ORDINUL CADOULUI FERMECAT 2018, ediția a III-a</h1>
+      <h1 class="page-header-title">🎁 Ordinul Cadoului Fermecat 2018, ediția a III-a</h1>
     </div>
   </header>
 
-  <main style="min-height: 50vh; background: var(--white);"></main>
+  <!-- Main Content Section -->
+  <main class="collage-section">
+    <div class="container">
+
+      <div style="max-width: 600px; margin: 0 auto; text-align: center; padding: 4rem 2rem; background: var(--white); border-radius: var(--radius-xl); border: 1px dashed var(--slate-300); box-shadow: var(--shadow-sm);">
+        <div style="font-size: 3.5rem; margin-bottom: 1rem;">📷</div>
+        <h3 style="font-size: 1.35rem; color: var(--slate-800); margin-bottom: 0.5rem;">Fotografiile pentru această ediție vor fi disponibile în curând</h3>
+        <p style="color: var(--slate-600); margin-bottom: 1.5rem;">Arhiva foto a Centrului Local este în curs de completare. Dacă ai imagini de la această ediție, trimite-le către liderii centrului!</p>
+        <a href="../proiecte.html" class="btn btn-primary">&larr; Înapoi la Proiecte în Comunitate</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="imageLightbox" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Vizualizator fotografie">
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" aria-label="Închide vizualizarea">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="lightbox-btn prev" aria-label="Fotografia anterioară">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-img-box">
+        <img class="lightbox-img" src="" alt="">
+      </div>
+
+      <button class="lightbox-btn next" aria-label="Fotografia următoare">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-caption-bar">
+        <h3 class="lightbox-title"></h3>
+        <span class="lightbox-counter"></span>
+      </div>
+
+      <div class="lightbox-thumbnails"></div>
+    </div>
+  </div>
 
   <site-footer></site-footer>
 

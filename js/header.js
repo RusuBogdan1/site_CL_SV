@@ -2,7 +2,7 @@ class CustomHeader extends HTMLElement {
   connectedCallback() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const currentFullPath = decodeURIComponent(window.location.pathname);
-    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze OCF)\//i.test(currentFullPath);
+    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze%20FL|Poze OCF|Poze%20OCF|Poze Lumina Pacii|Poze%20Lumina%20Pacii)\//i.test(currentFullPath);
 
     const resolveLocalHref = (href) => {
       if (!href || href.startsWith('#') || href.startsWith('http')) return href;

@@ -2,7 +2,7 @@ class CustomFooter extends HTMLElement {
   connectedCallback() {
     const currentYear = new Date().getFullYear();
     const currentPath = window.location.pathname;
-    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze OCF)\//i.test(currentPath);
+    const isNestedPage = /\/(Activitati%20poze|Activitati poze|Poze FL|Poze%20FL|Poze OCF|Poze%20OCF|Poze Lumina Pacii|Poze%20Lumina%20Pacii)\//i.test(currentPath);
 
     const resolveHref = (href) => {
       if (!href || href.startsWith('http') || href.startsWith('#')) return href;
