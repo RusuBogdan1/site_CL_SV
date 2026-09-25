@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Collage Filtering & Lightbox System (Ramuri & Activități)
   const collageFilterBtns = document.querySelectorAll('.collage-filter-bar .filter-btn');
-  const collageCards = document.querySelectorAll('.collage-grid .collage-card');
+  const collageCards = document.querySelectorAll('.collage-card');
 
   if (collageFilterBtns.length > 0 && collageCards.length > 0) {
     collageFilterBtns.forEach(btn => {
