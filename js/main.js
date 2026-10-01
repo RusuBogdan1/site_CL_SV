@@ -3,11 +3,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Navigation Toggle
+  // Mobile Navigation Toggle (doar dacă nu este gestionat deja de componenta CustomHeader)
+  const isCustomHeader = !!document.querySelector('site-header');
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
 
-  if (navToggle && navLinks) {
+  if (!isCustomHeader && navToggle && navLinks) {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('open');
       const isExpanded = navLinks.classList.contains('open');
@@ -302,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
         albumTitle = card.querySelector('.collage-card-title')?.textContent || '';
         albumDate = card.querySelector('.collage-date-tag')?.textContent || '';
         albumPhotos = Array.from(albumImgElements).map(img => ({
-          src: img.src,
+          src: img.getAttribute('data-src') || img.src,
           alt: img.alt || albumTitle
         }));
         currentPhotoIdx = (targetIdx >= 0 && targetIdx < albumPhotos.length) ? targetIdx : 0;
