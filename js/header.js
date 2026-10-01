@@ -93,18 +93,45 @@ class CustomHeader extends HTMLElement {
     if (toggleBtn && navLinks) {
       toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = navLinks.classList.toggle('is-open');
+        const isOpen = navLinks.classList.toggle('open');
         toggleBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Închidere la click în afara meniului
+      document.addEventListener('click', (e) => {
+        if (!this.contains(e.target)) {
+          navLinks.classList.remove('open');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+          this.querySelectorAll('.nav-dropdown-wrapper.open').forEach((w) => w.classList.remove('open'));
+        }
       });
     }
 
     // Deschidere dropdown-uri la atingere pe mobil
     dropdownToggles.forEach((toggle) => {
       toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 992) {
+        if (window.innerWidth <= 1080) {
           e.preventDefault();
+          e.stopPropagation();
           const wrapper = toggle.closest('.nav-dropdown-wrapper');
-          wrapper.classList.toggle('is-active');
+          const isOpen = wrapper.classList.contains('open');
+
+          // Închidem alte dropdown-uri deschise
+          this.querySelectorAll('.nav-dropdown-wrapper.open').forEach((w) => {
+            if (w !== wrapper) w.classList.remove('open');
+          });
+
+          wrapper.classList.toggle('open', !isOpen);
+        }
+      });
+    });
+
+    // Închidere meniu la click pe link terminal
+    this.querySelectorAll('.dropdown-menu a, .nav-links > li > a:not(.dropdown-toggle)').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1080 && navLinks) {
+          navLinks.classList.remove('open');
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         }
       });
     });

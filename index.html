@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css?v=2.0">
 </head>
 <body>
 
@@ -47,7 +47,7 @@
     </div>
   </section>
 
-  <!-- Cine suntem? - Scurtă prezentare a centrului nostru (Exact text from Word doc) -->
+  <!-- Cine suntem? - Scurtă prezentare a centrului nostru -->
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -57,25 +57,23 @@
         </p>
       </div>
 
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div style="background: var(--white); border-left: 5px solid var(--blue-700); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin-bottom: 1.5rem;">
-            <p style="font-size: 1.1rem; color: var(--slate-800); line-height: 1.7; margin-bottom: 1.25rem;">
-              <strong>Suntem Centrul Local „Ținutul Fagilor” Suceava</strong>, unul dintre pilonii mișcării cercetășești din România, cu o poveste ce a început în <strong>1992</strong>. Astăzi, aducem împreună peste <strong>100 de copii, tineri și lideri voluntari</strong> - de la 7 la peste 50 de ani - uniți de aceeași dorință: de a lăsa lumea puțin mai bună decât am găsit-o.
-            </p>
-            <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 0;">
-              Prin <strong>educație non-formală</strong>, învățare prin acțiune, joc și aventură în mijlocul naturii, creăm un mediu în care fiecare cercetaș își descoperă curajul, independența și spiritul de echipă. De peste 30 de ani, creștem împreună generații de tineri responsabili, implicați și ghidați de valori puternice.
-            </p>
-          </div>
+      <div class="home-intro-card">
+        <p>
+          <strong>Suntem Centrul Local „Ținutul Fagilor” Suceava</strong>, unul dintre pilonii mișcării cercetășești din România, cu o poveste ce a început în <strong>1992</strong>. Astăzi, aducem împreună peste <strong>100 de copii, tineri și lideri voluntari</strong> - de la 7 la peste 50 de ani - uniți de aceeași dorință: de a lăsa lumea puțin mai bună decât am găsit-o.
+        </p>
+        <p>
+          Prin <strong>educație non-formală</strong>, învățare prin acțiune, joc și aventură în mijlocul naturii, creăm un mediu în care fiecare cercetaș își descoperă curajul, independența și spiritul de echipă. De peste 30 de ani, creștem împreună generații de tineri responsabili, implicați și ghidați de valori puternice.
+        </p>
+      </div>
 
-          <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
-            <a href="despre-noi.html" class="btn btn-primary">Află mai multe Despre Noi</a>
-          </div>
+      <div class="home-cta-wrapper">
+        <a href="despre-noi.html" class="btn btn-primary">Află mai multe Despre Noi</a>
       </div>
     </div>
   </section>
 
   <!-- Ce este cercetășia? -->
-  <section class="section" style="background-color: var(--slate-100);">
+  <section class="section section-slate">
     <div class="container">
       <div class="section-header">
         <h2 class="section-title">Ce este cercetășia?</h2>
@@ -84,22 +82,22 @@
         </p>
       </div>
 
-      <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 2rem; align-items: stretch;">
-        <div style="background: var(--white); border-left: 5px solid var(--blue-700); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
-          <p style="font-size: 1.08rem; color: var(--slate-800); line-height: 1.7; margin-bottom: 1.25rem;">
+      <div class="home-whatis-grid">
+        <div class="home-whatis-card">
+          <p>
             <strong>Cercetășia este una dintre cele mai cunoscute forme de educație non-formală</strong> pentru copii și tineri. Prin principiul „învățării prin acțiune”, cercetașii descoperă lucruri noi <strong>făcând, explorând, colaborând și ajutând</strong>.
           </p>
-          <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7; margin-bottom: 1.25rem;">
+          <p>
             Activitățile în natură, munca în echipă, voluntariatul și proiectele pentru comunitate contribuie la dezvoltarea <strong>autonomiei, responsabilității, încrederii și spiritului de inițiativă</strong>.
           </p>
-          <p style="font-size: 1.05rem; color: var(--slate-700); line-height: 1.7; margin: 0;">
+          <p>
             De la începuturile sale, la începutul secolului XX, cercetășia a devenit o <strong>mișcare internațională</strong> care îi ajută pe tineri să nu fie doar pregătiți pentru viață, ci să fie <strong>implicați activ în construirea ei</strong>.
           </p>
         </div>
 
-        <div style="background: var(--blue-900); color: var(--white); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md);">
-          <h3 style="font-size: 1.35rem; color: var(--gold-400); margin: 0 0 1rem;">Principii și valori</h3>
-          <ul style="margin: 0; padding-left: 1.25rem; color: var(--blue-100); line-height: 1.8; font-size: 0.96rem;">
+        <div class="home-values-card">
+          <h3>Principii și valori</h3>
+          <ul>
             <li>Respect</li>
             <li>Responsabilitate</li>
             <li>Curaj</li>
@@ -110,7 +108,7 @@
         </div>
       </div>
 
-      <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+      <div class="home-cta-wrapper">
         <a href="ce-este-cercetasia.html" class="btn btn-primary">Vezi detaliat ce este cercetășia</a>
       </div>
     </div>
@@ -119,8 +117,8 @@
 
   <site-footer></site-footer>
 
-  <script src="js/footer.js" defer></script>
-  <script src="js/header.js" defer></script>
-  <script src="js/main.js"></script>
+  <script src="js/header.js?v=2.0" defer></script>
+  <script src="js/footer.js?v=2.0" defer></script>
+  <script src="js/main.js?v=2.0" defer></script>
 </body>
 </html>
