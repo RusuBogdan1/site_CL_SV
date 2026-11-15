@@ -372,6 +372,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Touch swipe support for mobile navigation
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchEndX = 0;
+    let touchEndY = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+      if (e.touches && e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchEndX = touchStartX;
+        touchEndY = touchStartY;
+      }
+    }, { passive: true });
+
+    lightbox.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches.length === 1) {
+        touchEndX = e.touches[0].clientX;
+        touchEndY = e.touches[0].clientY;
+      }
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', () => {
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          showNext();
+        } else {
+          showPrev();
+        }
+      }
+    }, { passive: true });
+
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
@@ -687,23 +721,49 @@ document.addEventListener('DOMContentLoaded', () => {
         phone: phone,
         email: email,
         message: message,
-        submittedAt: new Date().toLocaleString('ro-RO')
+        submittedAt: new Date().toLocaleString('ro-RO'),
+        adminEmail: 'cltinutulfagilor@gmail.com'
       };
 
-      // Send to Google Sheets if endpoint is provided
+      // 1. Trimite datele în Google Sheets
       if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT.trim() !== '') {
         try {
-          await fetch(GOOGLE_SHEETS_ENDPOINT, {
+          fetch(GOOGLE_SHEETS_ENDPOINT, {
             method: 'POST',
             mode: 'no-cors',
             headers: {
               'Content-Type': 'text/plain;charset=utf-8'
             },
             body: JSON.stringify(payload)
-          });
+          }).catch((err) => console.warn('Eroare Google Sheets:', err));
         } catch (err) {
           console.warn('Eroare la trimiterea în Google Sheets:', err);
         }
+      }
+
+      // 2. Trimite notificare prin email către cltinutulfagilor@gmail.com
+      try {
+        fetch('https://formsubmit.co/ajax/cltinutulfagilor@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            'Nume și Prenume': name,
+            'Vârstă': age + ' ani',
+            'Ramura de interes': branch,
+            'Număr Telefon': phone,
+            'Adresă Email': email,
+            'Mesaj': message || 'Fără mesaj suplimentar',
+            'Data înscrierii': payload.submittedAt,
+            _subject: '⚜️ Înscriere nouă Cercetași: ' + name + ' (' + branch + ')',
+            _template: 'table',
+            _captcha: 'false'
+          })
+        }).catch((err) => console.warn('Eroare notificare email:', err));
+      } catch (err) {
+        console.warn('Eroare la trimiterea emailului de notificare:', err);
       }
 
       // Update modal and show confirmation
@@ -750,4 +810,17 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  // Protecție împotriva copierii / descărcării / tragerii imaginilor din site
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG' || e.target.closest('img, .collage-img-wrap, .lightbox-img-box, .lightbox-thumbnails, .gallery-card, .brand-logo')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('dragstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+    }
+  });
 });

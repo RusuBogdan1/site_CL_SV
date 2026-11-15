@@ -21,13 +21,13 @@ class CustomFooter extends HTMLElement {
         <div class="container">
           <div class="footer-top">
             <div class="footer-brand">
-              <div class="footer-logo">
+              <a href="${resolveHref('index.html')}" class="footer-logo" title="Acasă - Centrul Local Ținutul Fagilor Suceava" style="text-decoration: none;">
                 <img src="${resolveAsset('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="48" height="48">
                 <div class="brand-text">
                   <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
                   <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
                 </div>
-              </div>
+              </a>
               <div style="margin-top: 0.75rem;">
                 <a href="https://scout.ro/" target="_blank" rel="noopener" style="color: var(--gold-400); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
                   <span>⚜️</span> <span>Site-ul Național ONCR</span>
@@ -42,6 +42,7 @@ class CustomFooter extends HTMLElement {
                 <li><a href="${resolveHref('despre-noi.html')}">Despre Noi</a></li>
                 <li><a href="${resolveHref('istoric.html')}">Istoricul Cercetășiei</a></li>
                 <li><a href="${resolveHref('ce-este-cercetasia.html')}">Ce este Cercetășia?</a></li>
+                <li><a href="https://sfh.scout.ro/" target="_blank" rel="noopener">Safe from Harm</a></li>
                 <li><a href="https://www.facebook.com/cercetasiiromanieisuceava?locale=ro_RO" target="_blank" rel="noopener">Facebook</a></li>
                 <li><a href="https://www.instagram.com/cl_tinutulfagilor_suceava/" target="_blank" rel="noopener">Instagram</a></li>
               </ul>
@@ -72,9 +73,6 @@ class CustomFooter extends HTMLElement {
             <p class="copyright">
               &copy; <span>${currentYear}</span> Centrul Local „Ținutul Fagilor” Suceava • Organizația Națională „Cercetașii României”. Toate drepturile rezervate.
             </p>
-            <div class="footer-bottom-links">
-              <a href="https://sfh.scout.ro/" target="_blank" rel="noopener">Platforma Safe from Harm</a>
-            </div>
           </div>
         </div>
       </footer>
