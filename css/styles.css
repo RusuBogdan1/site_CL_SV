@@ -34,7 +34,7 @@
   --purple-100: #e0e7ff;
   --purple-50: #eef2ff;
 
-  --gold-700: #b45309;
+  --gold-700: #92400e;
   --gold-600: #d97706;
   --gold-500: #f59e0b;
   --gold-400: #fbbf24;
@@ -811,10 +811,22 @@ ul, ol {
   padding: 5rem 0;
 }
 
-site-header,
+site-header {
+  display: block;
+  width: 100%;
+  min-height: 81px;
+}
+
 site-footer {
   display: block;
   width: 100%;
+  min-height: 360px;
+}
+
+@media (max-width: 1080px) {
+  site-header {
+    min-height: 73px;
+  }
 }
 
 .section-alt {
@@ -2303,11 +2315,13 @@ site-footer {
 }
 
 .footer-links li {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-links a {
-  color: var(--slate-400);
+  display: inline-block;
+  padding: 0.25rem 0;
+  color: var(--slate-300);
   font-size: 0.9rem;
   transition: var(--transition);
 }
@@ -2335,7 +2349,7 @@ site-footer {
 }
 
 .copyright {
-  color: var(--slate-400);
+  color: var(--slate-300);
   font-size: 0.85rem;
   line-height: 1.5;
   text-align: center;

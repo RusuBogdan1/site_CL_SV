@@ -25,6 +25,5 @@ jobs:
             **/.git*
             **/.git*/**
             _backup_original_images/**
-            .htaccess
             .well-known/**
             cgi-bin/**

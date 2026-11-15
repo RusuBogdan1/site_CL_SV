@@ -725,45 +725,21 @@ document.addEventListener('DOMContentLoaded', () => {
         adminEmail: 'cltinutulfagilor@gmail.com'
       };
 
-      // 1. Trimite datele în Google Sheets
+      // Trimite datele în Google Sheets (și notificare pe email prin Google Apps Script)
       if (GOOGLE_SHEETS_ENDPOINT && GOOGLE_SHEETS_ENDPOINT.trim() !== '') {
         try {
-          fetch(GOOGLE_SHEETS_ENDPOINT, {
+          await fetch(GOOGLE_SHEETS_ENDPOINT, {
             method: 'POST',
             mode: 'no-cors',
+            keepalive: true,
             headers: {
               'Content-Type': 'text/plain;charset=utf-8'
             },
             body: JSON.stringify(payload)
-          }).catch((err) => console.warn('Eroare Google Sheets:', err));
+          });
         } catch (err) {
           console.warn('Eroare la trimiterea în Google Sheets:', err);
         }
-      }
-
-      // 2. Trimite notificare prin email către cltinutulfagilor@gmail.com
-      try {
-        fetch('https://formsubmit.co/ajax/cltinutulfagilor@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            'Nume și Prenume': name,
-            'Vârstă': age + ' ani',
-            'Ramura de interes': branch,
-            'Număr Telefon': phone,
-            'Adresă Email': email,
-            'Mesaj': message || 'Fără mesaj suplimentar',
-            'Data înscrierii': payload.submittedAt,
-            _subject: '⚜️ Înscriere nouă Cercetași: ' + name + ' (' + branch + ')',
-            _template: 'table',
-            _captcha: 'false'
-          })
-        }).catch((err) => console.warn('Eroare notificare email:', err));
-      } catch (err) {
-        console.warn('Eroare la trimiterea emailului de notificare:', err);
       }
 
       // Update modal and show confirmation

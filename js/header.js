@@ -22,10 +22,9 @@ class CustomHeader extends HTMLElement {
       <header class="site-header">
         <div class="container header-inner">
           <a href="${resolveLocalHref('index.html')}" class="brand-logo" title="Centrul Local Ținutul Fagilor Suceava">
-            <img src="${resolveLocalHref('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="54" height="54">
+            <img src="${resolveLocalHref('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="54" height="54" fetchpriority="high" decoding="async">
             <div class="brand-text">
               <span class="brand-title">Ținutul Fagilor Suceava</span>
-              <span class="brand-subtitle"></span>
             </div>
           </a>
 
@@ -34,8 +33,8 @@ class CustomHeader extends HTMLElement {
               <li><a href="${resolveLocalHref('index.html')}" class="nav-link ${isActive('index.html') ? 'active' : ''}">Acasă</a></li>
               
               <li class="nav-dropdown-wrapper">
-                <a href="#" class="nav-link dropdown-toggle">
-                  Despre Noi <span class="dropdown-caret">▾</span>
+                <a href="${resolveLocalHref('despre-noi.html')}" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                  Despre Noi <span class="dropdown-caret" aria-hidden="true">▾</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="${resolveLocalHref('despre-noi.html')}">Cine suntem?</a></li>
@@ -57,8 +56,8 @@ class CustomHeader extends HTMLElement {
               </li>
 
               <li class="nav-dropdown-wrapper">
-                <a href="#" class="nav-link dropdown-toggle">
-                  Activități <span class="dropdown-caret">▾</span>
+                <a href="${resolveLocalHref('activitati.html')}" class="nav-link dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+                  Activități <span class="dropdown-caret" aria-hidden="true">▾</span>
                 </a>
                 <ul class="dropdown-menu">
                   <li><a href="${resolveLocalHref('activitati.html')}">Activități de Centru</a></li>
@@ -118,10 +117,15 @@ class CustomHeader extends HTMLElement {
 
           // Închidem alte dropdown-uri deschise
           this.querySelectorAll('.nav-dropdown-wrapper.open').forEach((w) => {
-            if (w !== wrapper) w.classList.remove('open');
+            if (w !== wrapper) {
+              w.classList.remove('open');
+              const t = w.querySelector('.dropdown-toggle');
+              if (t) t.setAttribute('aria-expanded', 'false');
+            }
           });
 
           wrapper.classList.toggle('open', !isOpen);
+          toggle.setAttribute('aria-expanded', String(!isOpen));
         }
       });
     });

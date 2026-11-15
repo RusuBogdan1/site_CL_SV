@@ -6,15 +6,19 @@
   <title>Cercetașii României - Centrul Local „Ținutul Fagilor” Suceava</title>
   <meta name="description" content="Site-ul oficial al Centrului Local „Ținutul Fagilor” Suceava - Organizația Națională Cercetașii României (ONCR). Educație non-formală, aventură în natură și dezvoltare de caracter din 1992.">
   <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preload" as="image" href="assets/images/logo.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css?v=2.0">
+  <script src="js/header.js?v=2.0" defer></script>
 </head>
 <body>
 
   <site-header></site-header>
 
+  <main>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-pattern"></div>
@@ -39,7 +43,7 @@
 
       <div class="hero-visual">
         <div class="hero-card-emblem">
-          <img src="assets/images/logo.png" alt="Emblemă Cercetașii României Suceava">
+          <img src="assets/images/logo.png" alt="Emblemă Cercetașii României Suceava" width="180" height="180" fetchpriority="high">
           <div class="hero-card-tag">Deviza Cercetășească</div>
           <p class="hero-card-quote">„Gata Oricând! Încearcă să lași această lume puțin mai bună decât ai găsit-o.”</p>
         </div>
@@ -113,11 +117,10 @@
       </div>
     </div>
   </section>
-
+  </main>
 
   <site-footer></site-footer>
 
-  <script src="js/header.js?v=2.0" defer></script>
   <script src="js/footer.js?v=2.0" defer></script>
   <script src="js/main.js?v=2.0" defer></script>
 </body>

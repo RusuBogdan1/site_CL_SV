@@ -22,7 +22,7 @@ class CustomFooter extends HTMLElement {
           <div class="footer-top">
             <div class="footer-brand">
               <a href="${resolveHref('index.html')}" class="footer-logo" title="Acasă - Centrul Local Ținutul Fagilor Suceava" style="text-decoration: none;">
-                <img src="${resolveAsset('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="48" height="48">
+                <img src="${resolveAsset('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="48" height="48" loading="lazy" decoding="async">
                 <div class="brand-text">
                   <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
                   <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
@@ -30,13 +30,13 @@ class CustomFooter extends HTMLElement {
               </a>
               <div style="margin-top: 0.75rem;">
                 <a href="https://scout.ro/" target="_blank" rel="noopener" style="color: var(--gold-400); font-weight: 600; font-size: 0.9rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.35rem;">
-                  <span>⚜️</span> <span>Site-ul Național ONCR</span>
+                  <span aria-hidden="true">⚜️</span> <span>Site-ul Național ONCR</span>
                 </a>
               </div>
             </div>
 
             <div class="footer-links-col">
-              <h4 class="footer-heading">Despre Noi</h4>
+              <h3 class="footer-heading">Despre Noi</h3>
               <ul class="footer-links">
                 <li><a href="${resolveHref('index.html')}">Acasă</a></li>
                 <li><a href="${resolveHref('despre-noi.html')}">Despre Noi</a></li>
@@ -49,7 +49,7 @@ class CustomFooter extends HTMLElement {
             </div>
 
             <div class="footer-links-col">
-              <h4 class="footer-heading">Susține Cercetășia</h4>
+              <h3 class="footer-heading">Susține Cercetășia</h3>
               <ul class="footer-links">
                 <li><a href="${resolveHref('donatii.html')}">Donații & Sponsorizări</a></li>
                 <li><a href="https://formular230.ro/centrul-local-tinutul-fagilor-suceava-filiala-organizatiei-nationale-cercetasii-romani" target="_blank" rel="noopener">Redirecționează 3.5%</a></li>
@@ -58,7 +58,7 @@ class CustomFooter extends HTMLElement {
             </div>
 
             <div class="footer-links-col">
-              <h4 class="footer-heading">Activități & Proiecte</h4>
+              <h3 class="footer-heading">Activități & Proiecte</h3>
               <ul class="footer-links">
                 <li><a href="${resolveHref('activitati.html')}">Activități de Centru</a></li>
                 <li><a href="${resolveHref('ramuri-de-varsta.html')}">Ramuri de Vârstă</a></li>

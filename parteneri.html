@@ -8,13 +8,16 @@
   <link rel="icon" type="image/png" href="assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="css/styles.css?v=2.0">
+  <script src="js/header.js?v=2.0" defer></script>
 </head>
 <body>
 
   <site-header></site-header>
   
+  <main>
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
@@ -36,7 +39,7 @@
         <a href="https://faracharity.ro/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Fundația FARA">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 120px; height: 120px;">
-              <img src="assets/images/Parteneri_logo/fundatiafara_logo.png" alt="Fundația FARA" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.2rem;">
+              <img src="assets/images/Parteneri_logo/fundatiafara_logo.png" alt="Fundația FARA" width="120" height="120" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.2rem;">
             </div>
             <h3 class="partner-name">Fundația FARA</h3>
           </div>
@@ -45,7 +48,7 @@
         <a href="https://www.logiscool.com/ro/locations/suceava/courses" target="_blank" rel="noopener" class="partner-card-link" aria-label="Logiscool Suceava">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 110px; height: 110px;">
-              <img src="assets/images/Parteneri_logo/logiscool.png" alt="Logiscool Suceava" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
+              <img src="assets/images/Parteneri_logo/logiscool.png" alt="Logiscool Suceava" width="110" height="110" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
             </div>
             <h3 class="partner-name">Logiscool Suceava</h3>
           </div>
@@ -54,7 +57,7 @@
         <a href="https://instytutpolski.pl/bucuresti/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Institutul Polonez din București">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 110px; height: 110px;">
-              <img src="assets/images/Parteneri_logo/institutul_polonez_bucuresti.png" alt="Institutul Polonez din București" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
+              <img src="assets/images/Parteneri_logo/institutul_polonez_bucuresti.png" alt="Institutul Polonez din București" width="110" height="110" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
             </div>
             <h3 class="partner-name">Institutul Polonez din București</h3>
           </div>
@@ -63,7 +66,7 @@
         <a href="https://expertmusic.ro/ro/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Expert Music">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 110px; height: 110px;">
-              <img src="assets/images/Parteneri_logo/expert-music.png" alt="Expert Music" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
+              <img src="assets/images/Parteneri_logo/expert-music.png" alt="Expert Music" width="110" height="110" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
             </div>
             <h3 class="partner-name">Expert Music</h3>
           </div>
@@ -72,7 +75,7 @@
         <a href="https://www.decathlon.ro/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Decathlon">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: visible; padding: 0; width: 118px; height: 118px; display: flex; align-items: center; justify-content: center;">
-              <img src="assets/images/Parteneri_logo/decathlon-logo-3.png" alt="Decathlon" style="width: 132%; height: 132%; object-fit: contain; display: block; background: #ffffff; transform: none; border-radius: 0; margin: 0; padding: 0;">
+              <img src="assets/images/Parteneri_logo/decathlon-logo-3.png" alt="Decathlon" width="118" height="118" loading="lazy" decoding="async" style="width: 132%; height: 132%; object-fit: contain; display: block; background: #ffffff; transform: none; border-radius: 0; margin: 0; padding: 0;">
             </div>
             <h3 class="partner-name">Decathlon</h3>
           </div>
@@ -81,7 +84,7 @@
         <a href="https://suceava.rosilva.ro/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Romsilva">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 110px; height: 110px;">
-              <img src="assets/images/Parteneri_logo/romsilva.png" alt="Romsilva" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
+              <img src="assets/images/Parteneri_logo/romsilva.png" alt="Romsilva" width="110" height="110" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 50%; padding: 0.35rem;">
             </div>
             <h3 class="partner-name">Romsilva</h3>
           </div>
@@ -90,7 +93,7 @@
         <a href="https://www.bucovinatv.ro/" target="_blank" rel="noopener" class="partner-card-link" aria-label="Bucovina TV">
           <div class="partner-card">
             <div class="partner-logo-box" style="background: #ffffff; border-color: #e5e7eb; overflow: hidden; padding: 0; width: 110px; height: 110px;">
-              <img src="assets/images/Parteneri_logo/Screenshot%202026-08-27%20133139.png" alt="Bucovina TV" style="width: 150%; height: 150%; object-fit: contain; display: block; border-radius: 50%; margin: -10px 0 0 12px; transform: scale(1.15);">
+              <img src="assets/images/Parteneri_logo/Screenshot%202026-08-27%20133139.png" alt="Bucovina TV" width="110" height="110" loading="lazy" decoding="async" style="width: 150%; height: 150%; object-fit: contain; display: block; border-radius: 50%; margin: -10px 0 0 12px; transform: scale(1.15);">
             </div>
             <h3 class="partner-name">Bucovina TV</h3>
           </div>
@@ -100,11 +103,11 @@
 
     </div>
   </section>
+  </main>
 
   <site-footer></site-footer>
 
   <script src="js/footer.js?v=2.0" defer></script>
-  <script src="js/header.js?v=2.0" defer></script>
-  <script src="js/main.js?v=2.0"></script>
+  <script src="js/main.js?v=2.0" defer></script>
 </body>
 </html>
