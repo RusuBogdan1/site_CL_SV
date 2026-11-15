@@ -134,10 +134,18 @@ class CustomHeader extends HTMLElement {
     this.querySelectorAll('.dropdown-menu a, .nav-links > li > a:not(.dropdown-toggle)').forEach((link) => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 1080 && navLinks) {
+          link.blur();
           navLinks.classList.remove('open');
+          this.querySelectorAll('.nav-dropdown-wrapper.open').forEach((w) => w.classList.remove('open'));
           if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
         }
       });
+    });
+
+    window.addEventListener('pageshow', () => {
+      if (navLinks) navLinks.classList.remove('open');
+      this.querySelectorAll('.nav-dropdown-wrapper.open').forEach((w) => w.classList.remove('open'));
+      if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
     });
   }
 }

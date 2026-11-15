@@ -3129,6 +3129,7 @@ site-footer {
   }
 
   .nav-links {
+    display: none;
     position: fixed;
     top: 72px;
     left: 0;
@@ -3142,17 +3143,19 @@ site-footer {
     gap: 0.35rem;
     box-shadow: var(--shadow-xl);
     border-bottom: 2px solid var(--blue-800);
-    transform: translateY(-150%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
-    pointer-events: none;
     z-index: 1000;
   }
 
   .nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
+  }
+
+  .nav-link,
+  .dropdown-menu li a,
+  .nav-toggle,
+  .brand-logo {
+    -webkit-tap-highlight-color: transparent;
+    transition: none;
   }
 
   .nav-link {
@@ -3160,6 +3163,13 @@ site-footer {
     padding: 0.75rem 1rem;
     font-size: 1rem;
     justify-content: space-between;
+  }
+
+  .nav-link:hover:not(.active),
+  .nav-link:focus:not(.active),
+  .nav-link:active:not(.active) {
+    background-color: transparent;
+    color: var(--slate-700);
   }
 
   .nav-dropdown-wrapper {
