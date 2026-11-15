@@ -215,8 +215,7 @@ ul, ol {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.98);
   border-bottom: 1px solid var(--slate-200);
   transition: var(--transition);
 }
@@ -656,8 +655,7 @@ ul, ol {
 
 .hero-card-emblem {
   position: relative;
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 2.5rem;
   border-radius: var(--radius-xl);
@@ -671,7 +669,6 @@ ul, ol {
   width: 180px;
   height: 180px;
   margin: 0 auto 1.5rem;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
 }
 
 .hero-card-tag {

@@ -22,7 +22,7 @@ class CustomHeader extends HTMLElement {
       <header class="site-header">
         <div class="container header-inner">
           <a href="${resolveLocalHref('index.html')}" class="brand-logo" title="Centrul Local Ținutul Fagilor Suceava">
-            <img src="${resolveLocalHref('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="54" height="54" fetchpriority="high" decoding="async">
+            <img src="${resolveLocalHref('assets/images/logo.webp')}" alt="Siglă Cercetașii României Suceava" width="54" height="54" fetchpriority="high" decoding="async">
             <div class="brand-text">
               <span class="brand-title">Ținutul Fagilor Suceava</span>
             </div>

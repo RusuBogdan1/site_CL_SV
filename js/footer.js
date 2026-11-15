@@ -22,7 +22,7 @@ class CustomFooter extends HTMLElement {
           <div class="footer-top">
             <div class="footer-brand">
               <a href="${resolveHref('index.html')}" class="footer-logo" title="Acasă - Centrul Local Ținutul Fagilor Suceava" style="text-decoration: none;">
-                <img src="${resolveAsset('assets/images/logo.png')}" alt="Siglă Cercetașii României Suceava" width="48" height="48" loading="lazy" decoding="async">
+                <img src="${resolveAsset('assets/images/logo.webp')}" alt="Siglă Cercetașii României Suceava" width="48" height="48" loading="lazy" decoding="async">
                 <div class="brand-text">
                   <span class="brand-title" style="color: var(--white);">Ținutul Fagilor Suceava</span>
                   <span class="brand-subtitle" style="color: var(--gold-400);">Cercetașii României</span>
