@@ -20,3 +20,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /home/cercetas/public_html/
+          timeout: 600000
+          exclude: |
+            **/.git*
+            **/.git*/**
+            _backup_original_images/**
